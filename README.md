@@ -12,3 +12,6 @@ Here's a list of new features in this version compared to the last:
 - Use `Web Test Runner` as test runner (instead of usual `jest`)
 - `pnpm` as package manager
 - Github Pages, deployed via Github workflows (Compared to Gitlab pages and Gitlab CI last time)
+- Use Chakra UI component library  
+- [ ] Animation
+- [ ] Dark/Light colour themes
