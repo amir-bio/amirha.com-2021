@@ -34,16 +34,16 @@
         }
       ]
     },
-    "dist/media/me.png.proxy.js": {
-      "bytes": 36,
+    "dist/media/me.webp.proxy.js": {
+      "bytes": 37,
       "imports": []
     },
-    "dist/media/lispExtensionScreenshot.png.proxy.js": {
-      "bytes": 57,
+    "dist/media/lispExtensionScreenshot.webp.proxy.js": {
+      "bytes": 58,
       "imports": []
     },
-    "dist/media/pedestrianTracker.png.proxy.js": {
-      "bytes": 51,
+    "dist/media/pedestrianTracker.webp.proxy.js": {
+      "bytes": 52,
       "imports": []
     },
     "dist/media/CustomGearIcon.svg.proxy.js": {
@@ -54,8 +54,8 @@
       "bytes": 50,
       "imports": []
     },
-    "dist/media/siteSkeleton.png.proxy.js": {
-      "bytes": 46,
+    "dist/media/siteSkeleton.webp.proxy.js": {
+      "bytes": 47,
       "imports": []
     },
     "_snowpack/pkg/common/component-ad77ec72.js": {
@@ -129,22 +129,22 @@
       ]
     },
     "dist/App.js": {
-      "bytes": 12183,
+      "bytes": 12187,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/media/me.png.proxy.js",
+          "path": "dist/media/me.webp.proxy.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/media/lispExtensionScreenshot.png.proxy.js",
+          "path": "dist/media/lispExtensionScreenshot.webp.proxy.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/media/pedestrianTracker.png.proxy.js",
+          "path": "dist/media/pedestrianTracker.webp.proxy.js",
           "kind": "import-statement"
         },
         {
@@ -156,7 +156,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "dist/media/siteSkeleton.png.proxy.js",
+          "path": "dist/media/siteSkeleton.webp.proxy.js",
           "kind": "import-statement"
         },
         {
@@ -231,14 +231,14 @@
         "_snowpack/pkg/react-dom.js": {
           "bytesInOutput": 124096
         },
-        "dist/media/me.png.proxy.js": {
-          "bytesInOutput": 28
+        "dist/media/me.webp.proxy.js": {
+          "bytesInOutput": 29
         },
-        "dist/media/lispExtensionScreenshot.png.proxy.js": {
-          "bytesInOutput": 49
+        "dist/media/lispExtensionScreenshot.webp.proxy.js": {
+          "bytesInOutput": 50
         },
-        "dist/media/pedestrianTracker.png.proxy.js": {
-          "bytesInOutput": 43
+        "dist/media/pedestrianTracker.webp.proxy.js": {
+          "bytesInOutput": 44
         },
         "dist/media/CustomGearIcon.svg.proxy.js": {
           "bytesInOutput": 40
@@ -246,8 +246,8 @@
         "dist/media/CustomPuzzleIcon.svg.proxy.js": {
           "bytesInOutput": 42
         },
-        "dist/media/siteSkeleton.png.proxy.js": {
-          "bytesInOutput": 38
+        "dist/media/siteSkeleton.webp.proxy.js": {
+          "bytesInOutput": 39
         },
         "_snowpack/pkg/common/component-ad77ec72.js": {
           "bytesInOutput": 142
@@ -277,7 +277,7 @@
           "bytesInOutput": 122
         }
       },
-      "bytes": 290155
+      "bytes": 290159
     }
   }
 }
