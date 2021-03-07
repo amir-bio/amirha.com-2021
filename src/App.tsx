@@ -60,9 +60,13 @@ const App = () => {
                 // mx="auto"
                 // bg="brand.primary"
             >
-                <Box bg="brand.primary" h="300">
-                    <Flex maxW="1140px" mx="auto">
-                        <Box color="white" py="100" pr="100">
+                <Box bg="brand.primary" color="white">
+                    <Box display={{lg: "flex"}} maxW="1140px" mx="auto" pt={50}>
+                        <Box
+                            py={{sm: 5, lg: 100}}
+                            pr={{sm: 5, lg: 100}}
+                            textAlign={{sm: "center", lg: "left"}}
+                        >
                             <Heading as="h1">Hey 👋, I’m Amirhossein Andohkosh</Heading>
                             <Box pt="30" fontSize="18">Senior Software Engineer at
                                 {' '}
@@ -73,14 +77,17 @@ const App = () => {
                         </Box>
                         <Box>
                             <Image
+                                mx={{sm: "auto", lg: 0}}
+                                mb={{sm: 10, lg: 0}}
                                 borderRadius="full"
-                                objectFit="contain"
+                                objectFit="cover"
+                                align="75% 20%"
                                 boxSize="300px"
                                 src={me}
                                 alt="Amirhossein Andohkosh"
                             />
                         </Box>
-                    </Flex>
+                    </Box>
                     <Center px="10">
                         <Box mx="4">
                             <a href="https://www.linkedin.com/in/amirhossein-andohkosh/" rel="noopener noreferrer"
