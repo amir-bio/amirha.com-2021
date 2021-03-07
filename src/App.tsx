@@ -2,12 +2,15 @@ import React from 'react';
 import me from './media/me.png'
 import lispExtensionScreenshot from './media/lisp_extension_screenshot.png'
 import pedestrianTracker from './media/pedestrian_tracker.png'
+import CustomGearIcon from './media/CustomGearIcon.svg'
+import CustomPuzzleIcon from './media/CustomPuzzleIcon.svg'
 import './App.css';
 import { mode } from "@chakra-ui/theme-tools"
 import { RiGithubFill, RiGitlabFill, RiLinkedinFill } from 'react-icons/ri'
 import { BsDisplay } from 'react-icons/bs'
 import {
     Box,
+    BoxProps,
     Center,
     ChakraProvider,
     extendTheme,
@@ -51,7 +54,28 @@ const theme = extendTheme({
     },
 })
 
-const TechCard = Box // TODO
+const TechCard = (props: BoxProps) => (
+    <Box
+        sx={{
+            bg: "brand.secondary",
+            mt: -150,
+            p: 5,
+            w: 1 / 3,
+            borderRadius: "lg",
+            color: "white",
+            transition: "all .4s ease-in-out",
+
+            ":hover": {
+                transform: "translateY(-20px);",
+                transition: "all .4s ease-in-out",
+
+            }
+        }}
+        {...props}
+    >
+        {props.children}
+    </Box>
+)
 const LightLink = (props: LinkProps) => (
     <Link
         sx={{
@@ -75,7 +99,6 @@ const DarkLink = (props: LinkProps) => (
         {props.children}
     </Link>
 )
-
 
 const App = () => {
     return (
@@ -162,9 +185,9 @@ const App = () => {
                 </Box>
 
                 <Flex maxW="1140px" mx="auto">
-                    <TechCard bg="brand.secondary" mr={10} mt={-150} p={5}>
-                        <Flex pb={20} justify="space-between" color="white">
-                            <Heading>Frontend</Heading>
+                    <TechCard>
+                        <Flex pb={20} justify="space-between">
+                            <Heading as="h3" size="lg">Frontend</Heading>
                             <BsDisplay size={50}/>
                         </Flex>
                         <Box>
@@ -179,10 +202,10 @@ const App = () => {
                         </Box>
                     </TechCard>
 
-                    <TechCard bg="brand.secondary" mr={10} mt={-150} p={5}>
-                        <Flex pb={20} justify="space-between" color="white">
-                            <Heading>Backend</Heading>
-                            <BsDisplay size={50}/>
+                    <TechCard mx={10}>
+                        <Flex pb={20} justify="space-between">
+                            <Heading as="h3" size="lg">Backend</Heading>
+                            <Image src={CustomGearIcon} width="70px"/>
                         </Flex>
                         <Box>
                             <Tag mx={1} my={2} borderRadius="full" size="lg">Go</Tag>
@@ -198,10 +221,10 @@ const App = () => {
                         </Box>
                     </TechCard>
 
-                    <TechCard bg="brand.secondary" mr={10} mt={-150} p={5}>
-                        <Flex pb={20} justify="space-between" color="white">
-                            <Heading>Infrastructure</Heading>
-                            <BsDisplay size={50}/>
+                    <TechCard>
+                        <Flex pb={20} justify="space-between">
+                            <Heading as="h3" size="lg">Infrastructure</Heading>
+                            <Image src={CustomPuzzleIcon} width="70px"/>
                         </Flex>
                         <Box>
                             <Tag mx={1} my={2} borderRadius="full" size="lg">Terraform</Tag>
@@ -232,7 +255,7 @@ const App = () => {
                                 highlight our code.
 
                                 <br/><br/>
-                                Read more about this project →
+                                <LightLink>Read more about this project → </LightLink>
                             </Text>
                         </Box>
                     </Flex>
