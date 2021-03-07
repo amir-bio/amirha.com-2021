@@ -14,11 +14,11 @@
   "bugs": {
     "url": "https://github.com/amirha97/amirha.com-2021/issues"
   },
-  "homepage": "https://amirha97.github.io",
+  "homepage": "https://amirha97.github.io/amirha.com-2021/",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
-    "deploy": "gh-pages -b gh-pages -d build",
+    "deploy": "gh-pages  -d build",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
