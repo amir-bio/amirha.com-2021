@@ -132,14 +132,15 @@ const SocialIcons = (props: CenterProps) => (
 
 type ProjectSectionProps = {
     imageSrc: string;
+    imageAlt: string;
     heading: string;
     reverseOrder: boolean; // reverse the order of image and text section
     children: React.ReactNode;
 }
-const ProjectSection = ({imageSrc, heading, reverseOrder, children}: ProjectSectionProps) => (
+const ProjectSection = ({imageSrc, imageAlt, heading, reverseOrder, children}: ProjectSectionProps) => (
     <Flex py="50" direction={{base: "column", lg: reverseOrder ? "row-reverse" : "row"}} align="center">
         <Image src={imageSrc} w={{base: "100%", lg: "45%"}} objectFit="cover"
-               align="0 100%"/>
+               align="0 100%" alt={imageAlt}/>
         <Spacer/>
         <Box w={{base: "100%", lg: "45%"}} pt={{base: 10, lg: 0}}>
             <Heading as="h3" size="lg">{heading}</Heading>
@@ -171,7 +172,7 @@ const App = () => {
                             textAlign={{base: "center", lg: "left"}}
                         >
                             <Heading as="h1">Hey 👋, I’m Amirhossein Andohkosh</Heading>
-                            <Text as="h3" pt="30" fontSize="18">Senior Software Engineer at
+                            <Text as="h2" pt="30" fontSize="18">Senior Software Engineer at
                                 {' '}
                                 <LightLink href="https://upsidetechnology.co/">
                                     Upside Technologies.
@@ -244,7 +245,7 @@ const App = () => {
                     <TechCard>
                         <Flex pb={20} justify="space-between">
                             <Heading as="h3" size="lg">Backend</Heading>
-                            <Image src={CustomGearIcon} width="70px"/>
+                            <Image alt="Gear icon" src={CustomGearIcon} width="70px"/>
                         </Flex>
                         <Box>
                             <Tags items={[
@@ -266,7 +267,7 @@ const App = () => {
                     <TechCard>
                         <Flex pb={20} justify="space-between">
                             <Heading as="h3" size="lg">Infrastructure</Heading>
-                            <Image src={CustomPuzzleIcon} width="70px"/>
+                            <Image alt="Puzzle icon" src={CustomPuzzleIcon} width="70px"/>
                         </Flex>
                         <Box>
                             <Tags items={[
@@ -288,6 +289,7 @@ const App = () => {
                         <ProjectSection
                             heading="ELPS VSCode Extension"
                             imageSrc={lispExtensionScreenshot}
+                            imageAlt="Screenshot of ELPS syntax highlighting in action"
                             reverseOrder={false}
                         >
                             I was an early adopter of a new programming language called
@@ -306,12 +308,14 @@ const App = () => {
                             highlight our code.
 
                             <br/><br/>
-                            <LightLink>Read more about this project → </LightLink>
+                            {/* TODO: Enable link after writing blog post*/}
+                            {/*<LightLink>Read more about this project → </LightLink>*/}
                         </ProjectSection>
 
                         <ProjectSection
                             heading="Pedestrian Tracker"
                             imageSrc={pedestrianTracker}
+                            imageAlt="Screenshot of Pedestrian detection generated frames"
                             reverseOrder={true}>
                             For my third-year project at Cambridge, I created a pedestrian detector and tracker for
                             CCTV footage.
@@ -333,6 +337,7 @@ const App = () => {
                         <ProjectSection
                             heading="Retail Startup Automator"
                             imageSrc={SiteSkeleton}
+                            imageAlt="Website skeleton image"
                             reverseOrder={false}
                         >
                             My second-year group project at university was a piece of software that automated creation
