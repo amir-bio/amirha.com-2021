@@ -80,7 +80,7 @@ const LightLink = (props: LinkProps) => (
             color: "brand.action.light",
             textDecoration: "underline",
         }}
-        rel="noopener noreferrer"
+        rel="noopener"
         {...props}
     >
         {props.children}
@@ -294,9 +294,12 @@ const App = () => {
                         classical machine learning techniques to build a super-efficient tracker with high
                         accuracy.
                         <br/><br/>
-                        I wrote this application in C++, using the
-                        <LightLink href="https://opencv.org/" target="_blank">OpenCV</LightLink>
-                        library as well as QT QML to
+                        I wrote this application in <b>C++</b>, using the
+                        {'  '}<LightLink href="https://opencv.org/" target="_blank">OpenCV</LightLink>{'    '}
+                        library as well as
+                        {'  '}<LightLink href="https://en.wikipedia.org/wiki/QML" target="_blank">QT
+                        QML</LightLink>{'    '}
+                        to
                         create a native GUI.
                     </ProjectSection>
 
