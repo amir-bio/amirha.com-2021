@@ -110,21 +110,27 @@ const App = () => {
                             />
                         </Box>
                     </Box>
-                    <Center px="10">
+                    <Center
+                        px="10"
+                        sx={{
+                            color: "white",
+                            "& :hover": {color: "brand.action.light"}
+                        }}
+                    >
                         <Box mx="4">
                             <a href="https://www.linkedin.com/in/amirhossein-andohkosh/" rel="noopener noreferrer"
                                target="_blank">
-                                <RiLinkedinFill size={25} color="white"/>
+                                <RiLinkedinFill size={25}/>
                             </a>
                         </Box>
                         <Box mx="4">
                             <a href="https://github.com/amirha97" rel="noopener noreferrer" target="_blank">
-                                <RiGithubFill size={25} color="white"/>
+                                <RiGithubFill size={25}/>
                             </a>
                         </Box>
                         <Box mx="4">
                             <a href="https://gitlab.com/amirH.A" rel="noopener noreferrer" target="_blank">
-                                <RiGitlabFill size={25} color="white"/>
+                                <RiGitlabFill size={25}/>
                             </a>
                         </Box>
 
