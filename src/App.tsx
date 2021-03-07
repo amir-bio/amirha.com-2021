@@ -5,7 +5,6 @@ import pedestrianTracker from './media/pedestrianTracker.png'
 import CustomGearIcon from './media/CustomGearIcon.svg'
 import CustomPuzzleIcon from './media/CustomPuzzleIcon.svg'
 import SiteSkeleton from './media/siteSkeleton.png'
-import './App.css';
 import { mode } from "@chakra-ui/theme-tools"
 import { RiGithubFill, RiGitlabFill, RiLinkedinFill } from 'react-icons/ri'
 import { BsDisplay } from 'react-icons/bs'
