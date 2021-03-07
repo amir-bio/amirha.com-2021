@@ -12,6 +12,7 @@ import {
     Box,
     BoxProps,
     Center,
+    CenterProps,
     ChakraProvider,
     extendTheme,
     Flex,
@@ -100,6 +101,34 @@ const DarkLink = (props: LinkProps) => (
     </Link>
 )
 
+const SocialIcons = (props: CenterProps) => (
+    <Center
+        {...props}
+        px="10"
+        sx={{
+            color: "white",
+            "& :hover": {color: "brand.action.light"}
+        }}
+    >
+        <Box mx="4">
+            <a href="https://www.linkedin.com/in/amirhossein-andohkosh/" rel="noopener noreferrer"
+               target="_blank">
+                <RiLinkedinFill size={25}/>
+            </a>
+        </Box>
+        <Box mx="4">
+            <a href="https://github.com/amirha97" rel="noopener noreferrer" target="_blank">
+                <RiGithubFill size={25}/>
+            </a>
+        </Box>
+        <Box mx="4">
+            <a href="https://gitlab.com/amirH.A" rel="noopener noreferrer" target="_blank">
+                <RiGitlabFill size={25}/>
+            </a>
+        </Box>
+    </Center>
+)
+
 const App = () => {
     return (
         <ChakraProvider theme={theme}>
@@ -133,32 +162,10 @@ const App = () => {
                             />
                         </Box>
                     </Box>
-                    <Center
-                        px="10"
-                        sx={{
-                            color: "white",
-                            "& :hover": {color: "brand.action.light"}
-                        }}
-                    >
-                        <Box mx="4">
-                            <a href="https://www.linkedin.com/in/amirhossein-andohkosh/" rel="noopener noreferrer"
-                               target="_blank">
-                                <RiLinkedinFill size={25}/>
-                            </a>
-                        </Box>
-                        <Box mx="4">
-                            <a href="https://github.com/amirha97" rel="noopener noreferrer" target="_blank">
-                                <RiGithubFill size={25}/>
-                            </a>
-                        </Box>
-                        <Box mx="4">
-                            <a href="https://gitlab.com/amirH.A" rel="noopener noreferrer" target="_blank">
-                                <RiGitlabFill size={25}/>
-                            </a>
-                        </Box>
 
 
-                    </Center>
+                    <SocialIcons/>
+
                 </Box>
 
                 <Box bg="white" my="10" pt="10" pb="150" w="100%">
@@ -266,7 +273,7 @@ const App = () => {
                             <br/>
 
                             <Text>
-                                For my third-year project at Cambridge, I created a pedestrian detectorand tracker for
+                                For my third-year project at Cambridge, I created a pedestrian detector and tracker for
                                 CCTV footage.
                                 <br/><br/>
                                 My aim was to use a mixture of advanced image processing algorithms and
@@ -282,14 +289,22 @@ const App = () => {
                     </Flex>
                 </Box>
 
-                <Flex>
-                    <footer>
-                        Icons
-                        <Link href="#"
-                              target="_blank"
-                              rel="noopener noreferrer">View source on Github →</Link>
-                    </footer>
-                </Flex>
+                <Box pt={20} pb={5} textAlign="center">
+                    <Center>
+                        <footer>
+                            <SocialIcons pb={5}/>
+
+                            <LightLink
+                                fontSize="14"
+                                href="https://github.com/amirha97/amirha.com-2021"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View source of this site on Github
+                            </LightLink>
+                        </footer>
+                    </Center>
+                </Box>
             </Box>
         </ChakraProvider>
     );
