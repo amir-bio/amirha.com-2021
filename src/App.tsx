@@ -74,11 +74,11 @@ const TechCard = (props: BoxProps) => (
         {props.children}
     </Box>
 )
-const LightLink = (props: LinkProps) => (
+const LightLink = ({noUnderline = false, ...props}: LinkProps & { noUnderline?: boolean }) => (
     <Link
         sx={{
             color: "brand.action.light",
-            textDecoration: "underline",
+            textDecoration: noUnderline ? "none" : "underline",
         }}
         rel="noopener"
         {...props}
@@ -165,7 +165,7 @@ const App = () => {
                             <Text as="h3" pt="30" fontSize="18">Senior Software Engineer at
                                 {' '}
                                 <LightLink href="https://upsidetechnology.co/">
-                                    Upside Technologies
+                                    Upside Technologies.
                                 </LightLink>
                             </Text>
                         </Box>
@@ -265,63 +265,77 @@ const App = () => {
                     </TechCard>
 
                 </Flex>
+                <Box px="10">
+                    <Box pt="5" color="white" maxW="1140px" mx="auto">
+                        <Heading as="h2" py="10">Projects</Heading>
+                        <ProjectSection
+                            heading="ELPS VSCode Extension"
+                            imageSrc={lispExtensionScreenshot}
+                            reverseOrder={false}
+                        >
+                            I was an early adopter of a new programming language called
+                            {'  '}
+                            <LightLink
+                                href="https://github.com/luthersystems/elps"
+                                target="_blank"
+                                noUnderline={true}
+                            >
+                                ELPS.
+                            </LightLink>
+                            {'    '}
+                            <br/><br/>
+                            To help myself and my team write code in this language I created an extension to
+                            syntax
+                            highlight our code.
 
-                <Box pt="5" px="10" color="white" maxW="1140px" mx="auto">
-                    <Heading as="h2" py="10">Projects</Heading>
-                    <ProjectSection
-                        heading="ELPS VSCode Extension"
-                        imageSrc={lispExtensionScreenshot}
-                        reverseOrder={false}
-                    >
-                        I was an early adopter of a new programming language called ELPS
-                        <br/><br/>
-                        To help myself and my team write code in this language I created an extension to
-                        syntax
-                        highlight our code.
+                            <br/><br/>
+                            <LightLink>Read more about this project → </LightLink>
+                        </ProjectSection>
 
-                        <br/><br/>
-                        <LightLink>Read more about this project → </LightLink>
-                    </ProjectSection>
+                        <ProjectSection
+                            heading="Pedestrian Tracker"
+                            imageSrc={pedestrianTracker}
+                            reverseOrder={true}>
+                            For my third-year project at Cambridge, I created a pedestrian detector and tracker for
+                            CCTV footage.
+                            <br/><br/>
+                            My aim was to use a mixture of advanced image processing algorithms and
+                            classical machine learning techniques to build a super-efficient tracker with high
+                            accuracy.
+                            <br/><br/>
+                            I wrote this application in <b>C++</b>, using the
+                            {'  '}<LightLink href="https://opencv.org/" target="_blank"
+                                             noUnderline={true}>OpenCV</LightLink>{'    '}
+                            library as well as
+                            {'  '}<LightLink href="https://en.wikipedia.org/wiki/QML" target="_blank"
+                                             noUnderline={true}>QT QML</LightLink>{'    '}
+                            to
+                            create a native GUI.
+                        </ProjectSection>
 
-                    <ProjectSection
-                        heading="Pedestrian Tracker"
-                        imageSrc={pedestrianTracker}
-                        reverseOrder={true}>
-                        For my third-year project at Cambridge, I created a pedestrian detector and tracker for
-                        CCTV footage.
-                        <br/><br/>
-                        My aim was to use a mixture of advanced image processing algorithms and
-                        classical machine learning techniques to build a super-efficient tracker with high
-                        accuracy.
-                        <br/><br/>
-                        I wrote this application in <b>C++</b>, using the
-                        {'  '}<LightLink href="https://opencv.org/" target="_blank">OpenCV</LightLink>{'    '}
-                        library as well as
-                        {'  '}<LightLink href="https://en.wikipedia.org/wiki/QML" target="_blank">QT
-                        QML</LightLink>{'    '}
-                        to
-                        create a native GUI.
-                    </ProjectSection>
+                        <ProjectSection
+                            heading="Retail Startup Automator"
+                            imageSrc={SiteSkeleton}
+                            reverseOrder={false}
+                        >
+                            My second-year group project at university was a piece of software that automated creation
+                            of
+                            retail websites.
+                            <br/><br/>
+                            This project consisted of a <b>Crawler and Scraper</b> for popular retail websites
+                            such as eBay and Amazon, and a <b>NLP/Machine Learning</b> component that determined which
+                            parts
+                            of
+                            the data are actual relevant to the product. The final component was a <b>CMS/Website
+                            Generation </b>
+                            component that made complete ready to use websites, with pages for each product.
+                            <br/><br/>
+                            All that's needed as input is a single keyword to automatically create a full retail
+                            website! 🚀
 
-                    <ProjectSection
-                        heading="Retail Startup Automator"
-                        imageSrc={SiteSkeleton}
-                        reverseOrder={false}
-                    >
-                        My second-year group project at university was a piece of software that automated creation of
-                        retail websites.
-                        <br/><br/>
-                        This project consisted of a <b>Crawler and Scraper</b> for popular retail websites
-                        such as eBay and Amazon, and a <b>NLP/Machine Learning</b> component that determined which parts
-                        of
-                        the data are actual relevant to the product. The final component was a <b>CMS/Website
-                        Generation </b>
-                        component that made complete ready to use websites, with pages for each product.
-                        <br/><br/>
-                        All that's needed as input is a single keyword to automatically create a full retail website! 🚀
+                        </ProjectSection>
 
-                    </ProjectSection>
-
+                    </Box>
                 </Box>
 
                 <Box pt={20} pb={5} textAlign="center">
