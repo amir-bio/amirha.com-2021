@@ -13,7 +13,7 @@ Here's a list of new features in this version compared to the last:
 - Create production bundle using `esbuild`
 - Use `Web Test Runner` as test runner (instead of usual `jest`)
 - `pnpm` as package manager
-- Github Pages, deployed via Github workflows (Compared to Gitlab pages and Gitlab CI last time)
+- Deployed via Github Pages (Compared to Gitlab pages and Gitlab CI last time)
 - Use Chakra UI component library
 - (Some) Animations
 - [ ] Dark/Light colour themes
@@ -26,3 +26,5 @@ Ensure you've got `pnpm` installed globally: `npm i -g pnpm`
 - To install all dependencies: `pnpm install`
 - To run a local dev server: `pnpm start`. (This uses `snowpack` under the hood)
 - To build a production bundle: `pnpm build`. (This uses `esbuild` via `snowpack`)
+- To deploy a new release: `pnpm deploy`. This assumes appropriate github token is available - it will run the build
+  step and push the generated dist directory to a branch called `gh-pages` which is configured to publish to the site.
