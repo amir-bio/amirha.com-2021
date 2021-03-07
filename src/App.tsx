@@ -81,10 +81,23 @@ const App = () => {
                             />
                         </Box>
                     </Flex>
-                    <Center py="20" px="10">
-                        <Box mx="4"><RiLinkedinFill size={25} color="white"/></Box>
-                        <Box mx="4"><RiGithubFill size={25} color="white"/></Box>
-                        <Box mx="4"><RiGitlabFill size={25} color="white"/></Box>
+                    <Center px="10">
+                        <Box mx="4">
+                            <a href="https://www.linkedin.com/in/amirhossein-andohkosh/" rel="noopener noreferrer"
+                               target="_blank">
+                                <RiLinkedinFill size={25} color="white"/>
+                            </a>
+                        </Box>
+                        <Box mx="4">
+                            <a href="https://github.com/amirha97" rel="noopener noreferrer" target="_blank">
+                                <RiGithubFill size={25} color="white"/>
+                            </a>
+                        </Box>
+                        <Box mx="4">
+                            <a href="https://gitlab.com/amirH.A" rel="noopener noreferrer" target="_blank">
+                                <RiGitlabFill size={25} color="white"/>
+                            </a>
+                        </Box>
 
 
                     </Center>
@@ -114,8 +127,8 @@ const App = () => {
                 </Box>
 
                 <Flex maxW="1140px" mx="auto">
-                    <TechCard bg="brand.secondary" mx={10} mt={-150} p={5}>
-                        <Flex pb={20}>
+                    <TechCard bg="brand.secondary" mr={10} mt={-150} p={5}>
+                        <Flex pb={20} justify="space-between" color="white">
                             <Heading>Frontend</Heading>
                             <BsDisplay size={50}/>
                         </Flex>
@@ -131,15 +144,15 @@ const App = () => {
                         </Box>
                     </TechCard>
 
-                    <TechCard bg="brand.secondary" mx={10} mt={-150} p={5}>
-                        <Flex pb={20}>
+                    <TechCard bg="brand.secondary" mr={10} mt={-150} p={5}>
+                        <Flex pb={20} justify="space-between" color="white">
                             <Heading>Backend</Heading>
                             <BsDisplay size={50}/>
                         </Flex>
                         <Box>
                             <Tag m={3} size="lg">Go</Tag>
                             <Tag m={3} size="lg">Python</Tag>
-                            <Tag m={3} size="lg">C</Tag>
+                            <Tag m={3} size="lg">C++</Tag>
                             <Tag m={3} size="lg">NodeJS</Tag>
                             <Tag m={3} size="lg">ELPS</Tag>
                             <Tag m={3} size="lg">gRPC</Tag>
@@ -150,8 +163,8 @@ const App = () => {
                         </Box>
                     </TechCard>
 
-                    <TechCard bg="brand.secondary" mx={10} mt={-150} p={5}>
-                        <Flex pb={20}>
+                    <TechCard bg="brand.secondary" mr={10} mt={-150} p={5}>
+                        <Flex pb={20} justify="space-between" color="white">
                             <Heading>Infrastructure</Heading>
                             <BsDisplay size={50}/>
                         </Flex>
