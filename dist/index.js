@@ -9915,14 +9915,14 @@ function _isNativeFunction(fn) {
   return Function.toString.call(fn).indexOf("[native code]") !== -1;
 }
 function _setPrototypeOf(o, p2) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf2(o2, p3) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf3(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
   return _setPrototypeOf(o, p2);
 }
 function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf2(o2) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf3(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
   return _getPrototypeOf(o);
@@ -11563,43 +11563,43 @@ var tinycolor = createCommonjsModule(function(module) {
         }
         return "progid:DXImageTransform.Microsoft.gradient(" + gradientType + "startColorstr=" + hex8String + ",endColorstr=" + secondHex8String + ")";
       },
-      toString: function(format) {
-        var formatSet = !!format;
-        format = format || this._format;
+      toString: function(format2) {
+        var formatSet = !!format2;
+        format2 = format2 || this._format;
         var formattedString = false;
         var hasAlpha = this._a < 1 && this._a >= 0;
-        var needsAlphaFormat = !formatSet && hasAlpha && (format === "hex" || format === "hex6" || format === "hex3" || format === "hex4" || format === "hex8" || format === "name");
+        var needsAlphaFormat = !formatSet && hasAlpha && (format2 === "hex" || format2 === "hex6" || format2 === "hex3" || format2 === "hex4" || format2 === "hex8" || format2 === "name");
         if (needsAlphaFormat) {
-          if (format === "name" && this._a === 0) {
+          if (format2 === "name" && this._a === 0) {
             return this.toName();
           }
           return this.toRgbString();
         }
-        if (format === "rgb") {
+        if (format2 === "rgb") {
           formattedString = this.toRgbString();
         }
-        if (format === "prgb") {
+        if (format2 === "prgb") {
           formattedString = this.toPercentageRgbString();
         }
-        if (format === "hex" || format === "hex6") {
+        if (format2 === "hex" || format2 === "hex6") {
           formattedString = this.toHexString();
         }
-        if (format === "hex3") {
+        if (format2 === "hex3") {
           formattedString = this.toHexString(true);
         }
-        if (format === "hex4") {
+        if (format2 === "hex4") {
           formattedString = this.toHex8String(true);
         }
-        if (format === "hex8") {
+        if (format2 === "hex8") {
           formattedString = this.toHex8String();
         }
-        if (format === "name") {
+        if (format2 === "name") {
           formattedString = this.toName();
         }
-        if (format === "hsl") {
+        if (format2 === "hsl") {
           formattedString = this.toHslString();
         }
-        if (format === "hsv") {
+        if (format2 === "hsv") {
           formattedString = this.toHsvString();
         }
         return formattedString || this.toHexString();
@@ -11681,7 +11681,7 @@ var tinycolor = createCommonjsModule(function(module) {
       var v2 = null;
       var l2 = null;
       var ok2 = false;
-      var format = false;
+      var format2 = false;
       if (typeof color2 == "string") {
         color2 = stringInputToObject(color2);
       }
@@ -11689,19 +11689,19 @@ var tinycolor = createCommonjsModule(function(module) {
         if (isValidCSSUnit(color2.r) && isValidCSSUnit(color2.g) && isValidCSSUnit(color2.b)) {
           rgb = rgbToRgb(color2.r, color2.g, color2.b);
           ok2 = true;
-          format = String(color2.r).substr(-1) === "%" ? "prgb" : "rgb";
+          format2 = String(color2.r).substr(-1) === "%" ? "prgb" : "rgb";
         } else if (isValidCSSUnit(color2.h) && isValidCSSUnit(color2.s) && isValidCSSUnit(color2.v)) {
           s = convertToPercentage(color2.s);
           v2 = convertToPercentage(color2.v);
           rgb = hsvToRgb(color2.h, s, v2);
           ok2 = true;
-          format = "hsv";
+          format2 = "hsv";
         } else if (isValidCSSUnit(color2.h) && isValidCSSUnit(color2.s) && isValidCSSUnit(color2.l)) {
           s = convertToPercentage(color2.s);
           l2 = convertToPercentage(color2.l);
           rgb = hslToRgb(color2.h, s, l2);
           ok2 = true;
-          format = "hsl";
+          format2 = "hsl";
         }
         if (color2.hasOwnProperty("a")) {
           a2 = color2.a;
@@ -11710,7 +11710,7 @@ var tinycolor = createCommonjsModule(function(module) {
       a2 = boundAlpha(a2);
       return {
         ok: ok2,
-        format: color2.format || format,
+        format: color2.format || format2,
         r: mathMin(255, mathMax(rgb.r, 0)),
         g: mathMin(255, mathMax(rgb.g, 0)),
         b: mathMin(255, mathMax(rgb.b, 0)),
@@ -15659,10 +15659,10 @@ function useImage(props) {
     if (sizes2) {
       img.sizes = sizes2;
     }
-    img.onload = (event) => {
+    img.onload = (event2) => {
       flush();
       setStatus("loaded");
-      onLoad == null ? void 0 : onLoad(event);
+      onLoad == null ? void 0 : onLoad(event2);
     };
     img.onerror = (error) => {
       flush();
@@ -15992,7 +15992,954 @@ var Tag = /* @__PURE__ */ forwardRef((props, ref) => {
   })));
 });
 
+// _snowpack/pkg/react-ga.js
+var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+var ReactPropTypesSecret_1 = ReactPropTypesSecret;
+function emptyFunction() {
+}
+function emptyFunctionWithReset() {
+}
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+var factoryWithThrowingShims = function() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret_1) {
+      return;
+    }
+    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");
+    err.name = "Invariant Violation";
+    throw err;
+  }
+  shim.isRequired = shim;
+  function getShim() {
+    return shim;
+  }
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+  ReactPropTypes.PropTypes = ReactPropTypes;
+  return ReactPropTypes;
+};
+var propTypes = createCommonjsModule(function(module) {
+  {
+    module.exports = factoryWithThrowingShims();
+  }
+});
+function warn2(s) {
+  console.warn("[react-ga]", s);
+}
+function _typeof$1(obj) {
+  "@babel/helpers - typeof";
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof$1 = function _typeof2(obj2) {
+      return typeof obj2;
+    };
+  } else {
+    _typeof$1 = function _typeof2(obj2) {
+      return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+    };
+  }
+  return _typeof$1(obj);
+}
+function ownKeys$2(object, enumerableOnly) {
+  var keys2 = Object.keys(object);
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly)
+      symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    keys2.push.apply(keys2, symbols);
+  }
+  return keys2;
+}
+function _objectSpread$2(target) {
+  for (var i2 = 1; i2 < arguments.length; i2++) {
+    var source = arguments[i2] != null ? arguments[i2] : {};
+    if (i2 % 2) {
+      ownKeys$2(Object(source), true).forEach(function(key) {
+        _defineProperty$2(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys$2(Object(source)).forEach(function(key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+  return target;
+}
+function _objectWithoutProperties$1(source, excluded) {
+  if (source == null)
+    return {};
+  var target = _objectWithoutPropertiesLoose$12(source, excluded);
+  var key, i2;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i2 = 0; i2 < sourceSymbolKeys.length; i2++) {
+      key = sourceSymbolKeys[i2];
+      if (excluded.indexOf(key) >= 0)
+        continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key))
+        continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _objectWithoutPropertiesLoose$12(source, excluded) {
+  if (source == null)
+    return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i2;
+  for (i2 = 0; i2 < sourceKeys.length; i2++) {
+    key = sourceKeys[i2];
+    if (excluded.indexOf(key) >= 0)
+      continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+function _defineProperties(target, props) {
+  for (var i2 = 0; i2 < props.length; i2++) {
+    var descriptor = props[i2];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor)
+      descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps)
+    _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps)
+    _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+function _inherits2(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, {constructor: {value: subClass, writable: true, configurable: true}});
+  if (superClass)
+    _setPrototypeOf2(subClass, superClass);
+}
+function _setPrototypeOf2(o, p2) {
+  _setPrototypeOf2 = Object.setPrototypeOf || function _setPrototypeOf3(o2, p3) {
+    o2.__proto__ = p3;
+    return o2;
+  };
+  return _setPrototypeOf2(o, p2);
+}
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct2();
+  return function _createSuperInternal() {
+    var Super = _getPrototypeOf2(Derived), result;
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf2(this).constructor;
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+    return _possibleConstructorReturn(this, result);
+  };
+}
+function _possibleConstructorReturn(self2, call) {
+  if (call && (_typeof$1(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+  return _assertThisInitialized(self2);
+}
+function _assertThisInitialized(self2) {
+  if (self2 === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+  return self2;
+}
+function _isNativeReflectConstruct2() {
+  if (typeof Reflect === "undefined" || !Reflect.construct)
+    return false;
+  if (Reflect.construct.sham)
+    return false;
+  if (typeof Proxy === "function")
+    return true;
+  try {
+    Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+    }));
+    return true;
+  } catch (e2) {
+    return false;
+  }
+}
+function _getPrototypeOf2(o) {
+  _getPrototypeOf2 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf3(o2) {
+    return o2.__proto__ || Object.getPrototypeOf(o2);
+  };
+  return _getPrototypeOf2(o);
+}
+function _defineProperty$2(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {value, enumerable: true, configurable: true, writable: true});
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+var NEWTAB = "_blank";
+var MIDDLECLICK = 1;
+var OutboundLink$1 = /* @__PURE__ */ function(_Component) {
+  _inherits2(OutboundLink2, _Component);
+  var _super = _createSuper(OutboundLink2);
+  function OutboundLink2() {
+    var _this;
+    _classCallCheck(this, OutboundLink2);
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    _this = _super.call.apply(_super, [this].concat(args));
+    _defineProperty$2(_assertThisInitialized(_this), "handleClick", function(event2) {
+      var _this$props = _this.props, target = _this$props.target, eventLabel = _this$props.eventLabel, to = _this$props.to, onClick = _this$props.onClick, trackerNames = _this$props.trackerNames;
+      var eventMeta = {
+        label: eventLabel
+      };
+      var sameTarget = target !== NEWTAB;
+      var normalClick = !(event2.ctrlKey || event2.shiftKey || event2.metaKey || event2.button === MIDDLECLICK);
+      if (sameTarget && normalClick) {
+        event2.preventDefault();
+        OutboundLink2.trackLink(eventMeta, function() {
+          window.location.href = to;
+        }, trackerNames);
+      } else {
+        OutboundLink2.trackLink(eventMeta, function() {
+        }, trackerNames);
+      }
+      if (onClick) {
+        onClick(event2);
+      }
+    });
+    return _this;
+  }
+  _createClass(OutboundLink2, [{
+    key: "render",
+    value: function render2() {
+      var _this$props2 = this.props, href = _this$props2.to, target = _this$props2.target, oldProps = _objectWithoutProperties$1(_this$props2, ["to", "target"]);
+      var props = _objectSpread$2(_objectSpread$2({}, oldProps), {}, {
+        target,
+        href,
+        onClick: this.handleClick
+      });
+      if (target === NEWTAB) {
+        props.rel = "".concat(props.rel ? props.rel : "", " noopener noreferrer").trim();
+      }
+      delete props.eventLabel;
+      delete props.trackerNames;
+      return /* @__PURE__ */ react.createElement("a", props);
+    }
+  }]);
+  return OutboundLink2;
+}(react.Component);
+_defineProperty$2(OutboundLink$1, "trackLink", function() {
+  warn2("ga tracking not enabled");
+});
+OutboundLink$1.propTypes = {
+  eventLabel: propTypes.string.isRequired,
+  target: propTypes.string,
+  to: propTypes.string,
+  onClick: propTypes.func,
+  trackerNames: propTypes.arrayOf(propTypes.string)
+};
+OutboundLink$1.defaultProps = {
+  target: null,
+  to: null,
+  onClick: null,
+  trackerNames: null
+};
+function mightBeEmail(s) {
+  return typeof s === "string" && s.indexOf("@") !== -1;
+}
+var redacted = "REDACTED (Potential Email Address)";
+function redactEmail(string) {
+  if (mightBeEmail(string)) {
+    warn2("This arg looks like an email address, redacting.");
+    return redacted;
+  }
+  return string;
+}
+function trim(s) {
+  return s && s.toString().replace(/^\s+|\s+$/g, "");
+}
+var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
+function toTitleCase(string) {
+  return trim(string).replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function(match, index, title) {
+    if (index > 0 && index + match.length !== title.length && match.search(smallWords) > -1 && title.charAt(index - 2) !== ":" && (title.charAt(index + match.length) !== "-" || title.charAt(index - 1) === "-") && title.charAt(index - 1).search(/[^\s-]/) < 0) {
+      return match.toLowerCase();
+    }
+    if (match.substr(1).search(/[A-Z]|\../) > -1) {
+      return match;
+    }
+    return match.charAt(0).toUpperCase() + match.substr(1);
+  });
+}
+function format() {
+  var s = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "";
+  var titleCase = arguments.length > 1 ? arguments[1] : void 0;
+  var redactingEmail = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : true;
+  var _str = s || "";
+  if (titleCase) {
+    _str = toTitleCase(s);
+  }
+  if (redactingEmail) {
+    _str = redactEmail(_str);
+  }
+  return _str;
+}
+function removeLeadingSlash(string) {
+  if (string.substring(0, 1) === "/") {
+    return string.substring(1);
+  }
+  return string;
+}
+var isLoaded = false;
+function loadGA(options) {
+  if (isLoaded)
+    return;
+  isLoaded = true;
+  var gaAddress = "https://www.google-analytics.com/analytics.js";
+  if (options && options.gaAddress) {
+    gaAddress = options.gaAddress;
+  } else if (options && options.debug) {
+    gaAddress = "https://www.google-analytics.com/analytics_debug.js";
+  }
+  var onerror = options && options.onerror;
+  (function(i2, s, o, g2, r2, a2, m2) {
+    i2["GoogleAnalyticsObject"] = r2;
+    i2[r2] = i2[r2] || function() {
+      (i2[r2].q = i2[r2].q || []).push(arguments);
+    }, i2[r2].l = 1 * new Date();
+    a2 = s.createElement(o), m2 = s.getElementsByTagName(o)[0];
+    a2.async = 1;
+    a2.src = g2;
+    a2.onerror = onerror;
+    m2.parentNode.insertBefore(a2, m2);
+  })(window, document, "script", gaAddress, "ga");
+}
+function log(s) {
+  console.info("[react-ga]", s);
+}
+var gaCalls = [];
+var TestModeAPI = {
+  calls: gaCalls,
+  ga: function ga() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    gaCalls.push([].concat(args));
+  },
+  resetCalls: function resetCalls() {
+    gaCalls.length = 0;
+  }
+};
+function _objectWithoutProperties(source, excluded) {
+  if (source == null)
+    return {};
+  var target = _objectWithoutPropertiesLoose2(source, excluded);
+  var key, i2;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i2 = 0; i2 < sourceSymbolKeys.length; i2++) {
+      key = sourceSymbolKeys[i2];
+      if (excluded.indexOf(key) >= 0)
+        continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key))
+        continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _objectWithoutPropertiesLoose2(source, excluded) {
+  if (source == null)
+    return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i2;
+  for (i2 = 0; i2 < sourceKeys.length; i2++) {
+    key = sourceKeys[i2];
+    if (excluded.indexOf(key) >= 0)
+      continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+function ownKeys$1(object, enumerableOnly) {
+  var keys2 = Object.keys(object);
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly)
+      symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    keys2.push.apply(keys2, symbols);
+  }
+  return keys2;
+}
+function _objectSpread$1(target) {
+  for (var i2 = 1; i2 < arguments.length; i2++) {
+    var source = arguments[i2] != null ? arguments[i2] : {};
+    if (i2 % 2) {
+      ownKeys$1(Object(source), true).forEach(function(key) {
+        _defineProperty$1(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys$1(Object(source)).forEach(function(key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+  return target;
+}
+function _defineProperty$1(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {value, enumerable: true, configurable: true, writable: true});
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof2(obj2) {
+      return typeof obj2;
+    };
+  } else {
+    _typeof = function _typeof2(obj2) {
+      return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+    };
+  }
+  return _typeof(obj);
+}
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o)
+    return;
+  if (typeof o === "string")
+    return _arrayLikeToArray(o, minLen);
+  var n2 = Object.prototype.toString.call(o).slice(8, -1);
+  if (n2 === "Object" && o.constructor)
+    n2 = o.constructor.name;
+  if (n2 === "Map" || n2 === "Set")
+    return Array.from(o);
+  if (n2 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
+    return _arrayLikeToArray(o, minLen);
+}
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter))
+    return Array.from(iter);
+}
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr))
+    return _arrayLikeToArray(arr);
+}
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length)
+    len = arr.length;
+  for (var i2 = 0, arr2 = new Array(len); i2 < len; i2++) {
+    arr2[i2] = arr[i2];
+  }
+  return arr2;
+}
+var _isNotBrowser = typeof window === "undefined" || typeof document === "undefined";
+var _debug = false;
+var _titleCase = true;
+var _testMode = false;
+var _alwaysSendToDefaultTracker = true;
+var _redactEmail = true;
+var internalGa = function internalGa2() {
+  var _window;
+  if (_testMode)
+    return TestModeAPI.ga.apply(TestModeAPI, arguments);
+  if (_isNotBrowser)
+    return false;
+  if (!window.ga)
+    return warn2("ReactGA.initialize must be called first or GoogleAnalytics should be loaded manually");
+  return (_window = window).ga.apply(_window, arguments);
+};
+function _format(s) {
+  return format(s, _titleCase, _redactEmail);
+}
+function _gaCommand(trackerNames) {
+  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+  var command = args[0];
+  if (typeof internalGa === "function") {
+    if (typeof command !== "string") {
+      warn2("ga command must be a string");
+      return;
+    }
+    if (_alwaysSendToDefaultTracker || !Array.isArray(trackerNames))
+      internalGa.apply(void 0, args);
+    if (Array.isArray(trackerNames)) {
+      trackerNames.forEach(function(name) {
+        internalGa.apply(void 0, _toConsumableArray(["".concat(name, ".").concat(command)].concat(args.slice(1))));
+      });
+    }
+  }
+}
+function _initialize(gaTrackingID, options) {
+  if (!gaTrackingID) {
+    warn2("gaTrackingID is required in initialize()");
+    return;
+  }
+  if (options) {
+    if (options.debug && options.debug === true) {
+      _debug = true;
+    }
+    if (options.titleCase === false) {
+      _titleCase = false;
+    }
+    if (options.redactEmail === false) {
+      _redactEmail = false;
+    }
+    if (options.useExistingGa) {
+      return;
+    }
+  }
+  if (options && options.gaOptions) {
+    internalGa("create", gaTrackingID, options.gaOptions);
+  } else {
+    internalGa("create", gaTrackingID, "auto");
+  }
+}
+function addTrackers(configsOrTrackingId, options) {
+  if (Array.isArray(configsOrTrackingId)) {
+    configsOrTrackingId.forEach(function(config2) {
+      if (_typeof(config2) !== "object") {
+        warn2("All configs must be an object");
+        return;
+      }
+      _initialize(config2.trackingId, config2);
+    });
+  } else {
+    _initialize(configsOrTrackingId, options);
+  }
+  return true;
+}
+function initialize(configsOrTrackingId, options) {
+  if (options && options.testMode === true) {
+    _testMode = true;
+  } else {
+    if (_isNotBrowser) {
+      return;
+    }
+    if (!options || options.standardImplementation !== true)
+      loadGA(options);
+  }
+  _alwaysSendToDefaultTracker = options && typeof options.alwaysSendToDefaultTracker === "boolean" ? options.alwaysSendToDefaultTracker : true;
+  addTrackers(configsOrTrackingId, options);
+}
+function ga2() {
+  for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    args[_key2] = arguments[_key2];
+  }
+  if (args.length > 0) {
+    internalGa.apply(void 0, args);
+    if (_debug) {
+      log("called ga('arguments');");
+      log("with arguments: ".concat(JSON.stringify(args)));
+    }
+  }
+  return window.ga;
+}
+function set(fieldsObject, trackerNames) {
+  if (!fieldsObject) {
+    warn2("`fieldsObject` is required in .set()");
+    return;
+  }
+  if (_typeof(fieldsObject) !== "object") {
+    warn2("Expected `fieldsObject` arg to be an Object");
+    return;
+  }
+  if (Object.keys(fieldsObject).length === 0) {
+    warn2("empty `fieldsObject` given to .set()");
+  }
+  _gaCommand(trackerNames, "set", fieldsObject);
+  if (_debug) {
+    log("called ga('set', fieldsObject);");
+    log("with fieldsObject: ".concat(JSON.stringify(fieldsObject)));
+  }
+}
+function send(fieldObject, trackerNames) {
+  _gaCommand(trackerNames, "send", fieldObject);
+  if (_debug) {
+    log("called ga('send', fieldObject);");
+    log("with fieldObject: ".concat(JSON.stringify(fieldObject)));
+    log("with trackers: ".concat(JSON.stringify(trackerNames)));
+  }
+}
+function pageview(rawPath, trackerNames, title) {
+  if (!rawPath) {
+    warn2("path is required in .pageview()");
+    return;
+  }
+  var path = trim(rawPath);
+  if (path === "") {
+    warn2("path cannot be an empty string in .pageview()");
+    return;
+  }
+  var extraFields = {};
+  if (title) {
+    extraFields.title = title;
+  }
+  if (typeof ga2 === "function") {
+    _gaCommand(trackerNames, "send", _objectSpread$1({
+      hitType: "pageview",
+      page: path
+    }, extraFields));
+    if (_debug) {
+      log("called ga('send', 'pageview', path);");
+      var extraLog = "";
+      if (title) {
+        extraLog = " and title: ".concat(title);
+      }
+      log("with path: ".concat(path).concat(extraLog));
+    }
+  }
+}
+function modalview(rawModalName, trackerNames) {
+  if (!rawModalName) {
+    warn2("modalName is required in .modalview(modalName)");
+    return;
+  }
+  var modalName = removeLeadingSlash(trim(rawModalName));
+  if (modalName === "") {
+    warn2("modalName cannot be an empty string or a single / in .modalview()");
+    return;
+  }
+  if (typeof ga2 === "function") {
+    var path = "/modal/".concat(modalName);
+    _gaCommand(trackerNames, "send", "pageview", path);
+    if (_debug) {
+      log("called ga('send', 'pageview', path);");
+      log("with path: ".concat(path));
+    }
+  }
+}
+function timing() {
+  var _ref = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, category = _ref.category, variable = _ref.variable, value = _ref.value, label = _ref.label;
+  var trackerNames = arguments.length > 1 ? arguments[1] : void 0;
+  if (typeof ga2 === "function") {
+    if (!category || !variable || typeof value !== "number") {
+      warn2("args.category, args.variable AND args.value are required in timing() AND args.value has to be a number");
+      return;
+    }
+    var fieldObject = {
+      hitType: "timing",
+      timingCategory: _format(category),
+      timingVar: _format(variable),
+      timingValue: value
+    };
+    if (label) {
+      fieldObject.timingLabel = _format(label);
+    }
+    send(fieldObject, trackerNames);
+  }
+}
+function event() {
+  var _ref2 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, category = _ref2.category, action = _ref2.action, label = _ref2.label, value = _ref2.value, nonInteraction = _ref2.nonInteraction, transport = _ref2.transport, args = _objectWithoutProperties(_ref2, ["category", "action", "label", "value", "nonInteraction", "transport"]);
+  var trackerNames = arguments.length > 1 ? arguments[1] : void 0;
+  if (typeof ga2 === "function") {
+    if (!category || !action) {
+      warn2("args.category AND args.action are required in event()");
+      return;
+    }
+    var fieldObject = {
+      hitType: "event",
+      eventCategory: _format(category),
+      eventAction: _format(action)
+    };
+    if (label) {
+      fieldObject.eventLabel = _format(label);
+    }
+    if (typeof value !== "undefined") {
+      if (typeof value !== "number") {
+        warn2("Expected `args.value` arg to be a Number.");
+      } else {
+        fieldObject.eventValue = value;
+      }
+    }
+    if (typeof nonInteraction !== "undefined") {
+      if (typeof nonInteraction !== "boolean") {
+        warn2("`args.nonInteraction` must be a boolean.");
+      } else {
+        fieldObject.nonInteraction = nonInteraction;
+      }
+    }
+    if (typeof transport !== "undefined") {
+      if (typeof transport !== "string") {
+        warn2("`args.transport` must be a string.");
+      } else {
+        if (["beacon", "xhr", "image"].indexOf(transport) === -1) {
+          warn2("`args.transport` must be either one of these values: `beacon`, `xhr` or `image`");
+        }
+        fieldObject.transport = transport;
+      }
+    }
+    Object.keys(args).filter(function(key) {
+      return key.substr(0, "dimension".length) === "dimension";
+    }).forEach(function(key) {
+      fieldObject[key] = args[key];
+    });
+    Object.keys(args).filter(function(key) {
+      return key.substr(0, "metric".length) === "metric";
+    }).forEach(function(key) {
+      fieldObject[key] = args[key];
+    });
+    send(fieldObject, trackerNames);
+  }
+}
+function exception(_ref3, trackerNames) {
+  var description = _ref3.description, fatal = _ref3.fatal;
+  if (typeof ga2 === "function") {
+    var fieldObject = {
+      hitType: "exception"
+    };
+    if (description) {
+      fieldObject.exDescription = _format(description);
+    }
+    if (typeof fatal !== "undefined") {
+      if (typeof fatal !== "boolean") {
+        warn2("`args.fatal` must be a boolean.");
+      } else {
+        fieldObject.exFatal = fatal;
+      }
+    }
+    send(fieldObject, trackerNames);
+  }
+}
+var plugin = {
+  require: function require2(rawName, options, trackerName) {
+    if (typeof ga2 === "function") {
+      if (!rawName) {
+        warn2("`name` is required in .require()");
+        return;
+      }
+      var name = trim(rawName);
+      if (name === "") {
+        warn2("`name` cannot be an empty string in .require()");
+        return;
+      }
+      var requireString = trackerName ? "".concat(trackerName, ".require") : "require";
+      if (options) {
+        if (_typeof(options) !== "object") {
+          warn2("Expected `options` arg to be an Object");
+          return;
+        }
+        if (Object.keys(options).length === 0) {
+          warn2("Empty `options` given to .require()");
+        }
+        ga2(requireString, name, options);
+        if (_debug) {
+          log("called ga('require', '".concat(name, "', ").concat(JSON.stringify(options)));
+        }
+      } else {
+        ga2(requireString, name);
+        if (_debug) {
+          log("called ga('require', '".concat(name, "');"));
+        }
+      }
+    }
+  },
+  execute: function execute(pluginName, action) {
+    var payload;
+    var actionType;
+    for (var _len3 = arguments.length, args = new Array(_len3 > 2 ? _len3 - 2 : 0), _key3 = 2; _key3 < _len3; _key3++) {
+      args[_key3 - 2] = arguments[_key3];
+    }
+    if (args.length === 1) {
+      payload = args[0];
+    } else {
+      actionType = args[0];
+      payload = args[1];
+    }
+    if (typeof ga2 === "function") {
+      if (typeof pluginName !== "string") {
+        warn2("Expected `pluginName` arg to be a String.");
+      } else if (typeof action !== "string") {
+        warn2("Expected `action` arg to be a String.");
+      } else {
+        var command = "".concat(pluginName, ":").concat(action);
+        payload = payload || null;
+        if (actionType && payload) {
+          ga2(command, actionType, payload);
+          if (_debug) {
+            log("called ga('".concat(command, "');"));
+            log('actionType: "'.concat(actionType, '" with payload: ').concat(JSON.stringify(payload)));
+          }
+        } else if (payload) {
+          ga2(command, payload);
+          if (_debug) {
+            log("called ga('".concat(command, "');"));
+            log("with payload: ".concat(JSON.stringify(payload)));
+          }
+        } else {
+          ga2(command);
+          if (_debug) {
+            log("called ga('".concat(command, "');"));
+          }
+        }
+      }
+    }
+  }
+};
+function outboundLink(args, hitCallback, trackerNames) {
+  if (typeof hitCallback !== "function") {
+    warn2("hitCallback function is required");
+    return;
+  }
+  if (typeof ga2 === "function") {
+    if (!args || !args.label) {
+      warn2("args.label is required in outboundLink()");
+      return;
+    }
+    var fieldObject = {
+      hitType: "event",
+      eventCategory: "Outbound",
+      eventAction: "Click",
+      eventLabel: _format(args.label)
+    };
+    var safetyCallbackCalled = false;
+    var safetyCallback = function safetyCallback2() {
+      safetyCallbackCalled = true;
+      hitCallback();
+    };
+    var t2 = setTimeout(safetyCallback, 250);
+    var clearableCallbackForGA = function clearableCallbackForGA2() {
+      clearTimeout(t2);
+      if (!safetyCallbackCalled) {
+        hitCallback();
+      }
+    };
+    fieldObject.hitCallback = clearableCallbackForGA;
+    send(fieldObject, trackerNames);
+  } else {
+    setTimeout(hitCallback, 0);
+  }
+}
+var testModeAPI = TestModeAPI;
+var core = {
+  initialize,
+  ga: ga2,
+  set,
+  send,
+  pageview,
+  modalview,
+  timing,
+  event,
+  exception,
+  plugin,
+  outboundLink,
+  testModeAPI: TestModeAPI
+};
+var Defaults = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  addTrackers,
+  initialize,
+  ga: ga2,
+  set,
+  send,
+  pageview,
+  modalview,
+  timing,
+  event,
+  exception,
+  plugin,
+  outboundLink,
+  testModeAPI,
+  default: core
+});
+function ownKeys(object, enumerableOnly) {
+  var keys2 = Object.keys(object);
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly)
+      symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    keys2.push.apply(keys2, symbols);
+  }
+  return keys2;
+}
+function _objectSpread(target) {
+  for (var i2 = 1; i2 < arguments.length; i2++) {
+    var source = arguments[i2] != null ? arguments[i2] : {};
+    if (i2 % 2) {
+      ownKeys(Object(source), true).forEach(function(key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function(key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+  return target;
+}
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {value, enumerable: true, configurable: true, writable: true});
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+OutboundLink$1.origTrackLink = OutboundLink$1.trackLink;
+OutboundLink$1.trackLink = outboundLink;
+var OutboundLink = OutboundLink$1;
+var __pika_web_default_export_for_treeshaking__ = _objectSpread(_objectSpread({}, Defaults), {}, {
+  OutboundLink
+});
+var react_ga_default = __pika_web_default_export_for_treeshaking__;
+
 // dist/App.js
+react_ga_default.initialize("g77-2");
+react_ga_default.pageview(window.location.pathname + window.location.search);
 var colors2 = {
   brand: {
     primary: "#102A4C",
@@ -16037,13 +16984,6 @@ var LightLink = ({noUnderline = false, ...props}) => /* @__PURE__ */ react.creat
     textDecoration: noUnderline ? "none" : "underline"
   },
   rel: "noopener",
-  ...props
-}, props.children);
-var DarkLink = (props) => /* @__PURE__ */ react.createElement(Link, {
-  sx: {
-    color: "brand.action.dark",
-    textDecoration: "underline"
-  },
   ...props
 }, props.children);
 var SocialIcons = (props) => /* @__PURE__ */ react.createElement(Center, {
@@ -16094,6 +17034,12 @@ var ProjectSection = ({imageSrc, heading, reverseOrder, children}) => /* @__PURE
   as: "h3",
   size: "lg"
 }, heading), /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement(Text, null, children)));
+var Tags = ({items}) => /* @__PURE__ */ react.createElement(react.Fragment, null, items.map((tag) => /* @__PURE__ */ react.createElement(Tag, {
+  mx: 1,
+  my: 2,
+  borderRadius: "full",
+  size: "lg"
+}, tag)));
 var App = () => {
   return /* @__PURE__ */ react.createElement(ChakraProvider, {
     theme: theme2
@@ -16141,7 +17087,7 @@ var App = () => {
     as: "h2"
   }, "About"), /* @__PURE__ */ react.createElement(Text, {
     py: "10"
-  }, "I\u2019m a Software Engineer based in London. I graduated in Computer Science from the University of Cambridge in 2018.", /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement("br", null), "Currently I\u2019m working at Upside, as a Senior Software Engineer. We are revolutionising investing not just for investors, but for everyone from enthusiasts to portfolio manager and professional analysts!", /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement("br", null), "Prior to Upside I worked at Acre as a Senior Backend Engineer and as a computer scientist at Netcraft before that.", /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement(DarkLink, null, "My story \u2192 ")))), /* @__PURE__ */ react.createElement(Flex, {
+  }, "I\u2019m a Software Engineer based in London. I graduated in Computer Science from the University of Cambridge in 2018.", /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement("br", null), "Currently I\u2019m working at Upside, as a Senior Software Engineer. We are revolutionising investing not just for investors, but for everyone from enthusiasts to portfolio manager and professional analysts!", /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement("br", null), "Prior to Upside I worked at Acre as a Senior Backend Engineer and as a Computer Scientist at Netcraft before that.", /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement("br", null)))), /* @__PURE__ */ react.createElement(Flex, {
     direction: {base: "column", lg: "row"},
     maxW: "1140px",
     mx: "auto"
@@ -16153,47 +17099,18 @@ var App = () => {
     size: "lg"
   }, "Frontend"), /* @__PURE__ */ react.createElement(BsDisplay, {
     size: 50
-  })), /* @__PURE__ */ react.createElement(Box, null, /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "React"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "TypeScript"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "JSS"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Webpack"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Cypress"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "GraphQL"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Storybook"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "jQuery"))), /* @__PURE__ */ react.createElement(TechCard, null, /* @__PURE__ */ react.createElement(Flex, {
+  })), /* @__PURE__ */ react.createElement(Box, null, /* @__PURE__ */ react.createElement(Tags, {
+    items: [
+      "React",
+      "TypeScript",
+      "JSS",
+      "Webpack",
+      "Cypress",
+      "GraphQL",
+      "Storybook",
+      "jQuery"
+    ]
+  }))), /* @__PURE__ */ react.createElement(TechCard, null, /* @__PURE__ */ react.createElement(Flex, {
     pb: 20,
     justify: "space-between"
   }, /* @__PURE__ */ react.createElement(Heading, {
@@ -16202,57 +17119,21 @@ var App = () => {
   }, "Backend"), /* @__PURE__ */ react.createElement(Image$1, {
     src: CustomGearIcon_svg_proxy_default,
     width: "70px"
-  })), /* @__PURE__ */ react.createElement(Box, null, /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Go"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Python"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "C++"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "NodeJS"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "ELPS"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "gRPC"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "PHP"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Perl"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "PostgreSQL"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Django"))), /* @__PURE__ */ react.createElement(TechCard, null, /* @__PURE__ */ react.createElement(Flex, {
+  })), /* @__PURE__ */ react.createElement(Box, null, /* @__PURE__ */ react.createElement(Tags, {
+    items: [
+      "Go",
+      "Python",
+      "C++",
+      "NodeJS",
+      "ELPS",
+      "PHP",
+      "Perl",
+      "REST",
+      "gRPC",
+      "PostgreSQL",
+      "Django"
+    ]
+  }))), /* @__PURE__ */ react.createElement(TechCard, null, /* @__PURE__ */ react.createElement(Flex, {
     pb: 20,
     justify: "space-between"
   }, /* @__PURE__ */ react.createElement(Heading, {
@@ -16261,42 +17142,17 @@ var App = () => {
   }, "Infrastructure"), /* @__PURE__ */ react.createElement(Image$1, {
     src: CustomPuzzleIcon_svg_proxy_default,
     width: "70px"
-  })), /* @__PURE__ */ react.createElement(Box, null, /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Terraform"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "AWS"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "GCP"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Kubernetes"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Docker"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "Helm"), /* @__PURE__ */ react.createElement(Tag, {
-    mx: 1,
-    my: 2,
-    borderRadius: "full",
-    size: "lg"
-  }, "CI/CD")))), /* @__PURE__ */ react.createElement(Box, {
+  })), /* @__PURE__ */ react.createElement(Box, null, /* @__PURE__ */ react.createElement(Tags, {
+    items: [
+      "Terraform",
+      "AWS",
+      "GCP",
+      "Kubernetes",
+      "Docker",
+      "Helm",
+      "CI/CD"
+    ]
+  })))), /* @__PURE__ */ react.createElement(Box, {
     px: "10"
   }, /* @__PURE__ */ react.createElement(Box, {
     pt: "5",
@@ -16330,7 +17186,7 @@ var App = () => {
     heading: "Retail Startup Automator",
     imageSrc: siteSkeleton_png_proxy_default,
     reverseOrder: false
-  }, "My second-year group project at university was a piece of software that automated creation of retail websites.", /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement("br", null), "This project consisted of a ", /* @__PURE__ */ react.createElement("b", null, "Crawler and Scraper"), " for popular retail websites such as eBay and Amazon, and a ", /* @__PURE__ */ react.createElement("b", null, "NLP/Machine Learning"), " component that determined which parts of the data are actual relevant to the product. The final component was a ", /* @__PURE__ */ react.createElement("b", null, "CMS/Website Generation "), "component that made complete ready to use websites, with pages for each product.", /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement("br", null), "All that's needed as input is a single keyword to automatically create a full retail website! \u{1F680}"))), /* @__PURE__ */ react.createElement(Box, {
+  }, "My second-year group project at university was a piece of software that automated creation of retail websites.", /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement("br", null), "This project consisted of a ", /* @__PURE__ */ react.createElement("b", null, "Crawler and Scraper"), " for popular retail websites such as eBay and Amazon, and a ", /* @__PURE__ */ react.createElement("b", null, "NLP/Machine Learning"), " component that determined which parts of the data are actual relevant to the product. The final component was a ", /* @__PURE__ */ react.createElement("b", null, "CMS/Website Generation "), "component that made complete ready to use websites, with pages for each product.", /* @__PURE__ */ react.createElement("br", null), /* @__PURE__ */ react.createElement("br", null), "All that's needed to automatically create a large retail website is a single keyword! \u{1F680}"))), /* @__PURE__ */ react.createElement(Box, {
     pt: 20,
     pb: 5,
     textAlign: "center"
@@ -16342,11 +17198,10 @@ var App = () => {
     target: "_blank"
   }, "View source of this site on Github"))))));
 };
-var App_default = App;
 
 // dist/index.js
 import.meta.env = env_exports;
-react_dom_default.render(/* @__PURE__ */ react.createElement(react.StrictMode, null, /* @__PURE__ */ react.createElement(App_default, null)), document.getElementById("root"));
+react_dom_default.render(/* @__PURE__ */ react.createElement(react.StrictMode, null, /* @__PURE__ */ react.createElement(App, null)), document.getElementById("root"));
 if (void 0) {
   (void 0).accept();
 }

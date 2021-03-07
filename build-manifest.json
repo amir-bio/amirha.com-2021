@@ -115,8 +115,17 @@
         }
       ]
     },
+    "_snowpack/pkg/react-ga.js": {
+      "bytes": 34333,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/index-b077351c.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
     "dist/App.js": {
-      "bytes": 14178,
+      "bytes": 12021,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -161,11 +170,15 @@
         {
           "path": "_snowpack/pkg/@chakra-ui/react.js",
           "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/react-ga.js",
+          "kind": "import-statement"
         }
       ]
     },
     "dist/index.js": {
-      "bytes": 491,
+      "bytes": 493,
       "imports": [
         {
           "path": "_snowpack/env.js",
@@ -238,16 +251,19 @@
           "bytesInOutput": 716
         },
         "_snowpack/pkg/@chakra-ui/react.js": {
-          "bytesInOutput": 239409
+          "bytesInOutput": 239437
+        },
+        "_snowpack/pkg/react-ga.js": {
+          "bytesInOutput": 29883
         },
         "dist/App.js": {
-          "bytesInOutput": 13469
+          "bytesInOutput": 11081
         },
         "dist/index.js": {
-          "bytesInOutput": 244
+          "bytesInOutput": 236
         }
       },
-      "bytes": 469323
+      "bytes": 496868
     }
   }
 }
