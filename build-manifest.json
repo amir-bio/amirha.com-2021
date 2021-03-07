@@ -125,7 +125,7 @@
       ]
     },
     "dist/App.js": {
-      "bytes": 12021,
+      "bytes": 12029,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -257,13 +257,13 @@
           "bytesInOutput": 29883
         },
         "dist/App.js": {
-          "bytesInOutput": 11081
+          "bytesInOutput": 11089
         },
         "dist/index.js": {
           "bytesInOutput": 236
         }
       },
-      "bytes": 496868
+      "bytes": 496876
     }
   }
 }

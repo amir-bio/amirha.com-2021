@@ -16938,7 +16938,7 @@ var __pika_web_default_export_for_treeshaking__ = _objectSpread(_objectSpread({}
 var react_ga_default = __pika_web_default_export_for_treeshaking__;
 
 // dist/App.js
-react_ga_default.initialize("g77-2");
+react_ga_default.initialize("UA-41904377-2");
 react_ga_default.pageview(window.location.pathname + window.location.search);
 var colors2 = {
   brand: {
