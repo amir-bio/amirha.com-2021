@@ -1,9 +1,10 @@
 import React from 'react';
 import me from './media/me.png'
-import lispExtensionScreenshot from './media/lisp_extension_screenshot.png'
-import pedestrianTracker from './media/pedestrian_tracker.png'
+import lispExtensionScreenshot from './media/lispExtensionScreenshot.png'
+import pedestrianTracker from './media/pedestrianTracker.png'
 import CustomGearIcon from './media/CustomGearIcon.svg'
 import CustomPuzzleIcon from './media/CustomPuzzleIcon.svg'
+import SiteSkeleton from './media/siteSkeleton.png'
 import './App.css';
 import { mode } from "@chakra-ui/theme-tools"
 import { RiGithubFill, RiGitlabFill, RiLinkedinFill } from 'react-icons/ri'
@@ -79,6 +80,7 @@ const LightLink = (props: LinkProps) => (
             color: "brand.action.light",
             textDecoration: "underline",
         }}
+        rel="noopener noreferrer"
         {...props}
     >
         {props.children}
@@ -125,11 +127,32 @@ const SocialIcons = (props: CenterProps) => (
     </Center>
 )
 
+type ProjectSectionProps = {
+    imageSrc: string;
+    heading: string;
+    reverseOrder: boolean; // reverse the order of image and text section
+    children: React.ReactNode;
+}
+const ProjectSection = ({imageSrc, heading, reverseOrder, children}: ProjectSectionProps) => (
+    <Flex py="50" direction={{base: "column", lg: reverseOrder ? "row-reverse" : "row"}} align="center">
+        <Image src={imageSrc} w={{base: "100%", lg: "45%"}} objectFit="cover"
+               align="0 100%"/>
+        <Spacer/>
+        <Box w={{base: "100%", lg: "45%"}} pt={{base: 10, lg: 0}}>
+            <Heading as="h3" size="lg">{heading}</Heading>
+            <br/>
+            <Text>
+                {children}
+            </Text>
+        </Box>
+    </Flex>
+)
+
 const App = () => {
     return (
         <ChakraProvider theme={theme}>
             <Box>
-                <Box bg="brand.primary" color="white">
+                <Box bg="brand.primary" color="white" px="10">
                     {/* display={{lg: "flex"}} Changes the Display to a flex at and after a large breakpoint
                     - causes children to stack vertically at sizes below it*/}
                     <Box display={{lg: "flex"}} maxW="1140px" mx="auto" pt={50}>
@@ -139,12 +162,12 @@ const App = () => {
                             textAlign={{base: "center", lg: "left"}}
                         >
                             <Heading as="h1">Hey 👋, I’m Amirhossein Andohkosh</Heading>
-                            <Box pt="30" fontSize="18">Senior Software Engineer at
+                            <Text as="h3" pt="30" fontSize="18">Senior Software Engineer at
                                 {' '}
-                                <LightLink href="https://upsidetechnology.co/" rel="noopener noreferrer">
+                                <LightLink href="https://upsidetechnology.co/">
                                     Upside Technologies
                                 </LightLink>
-                            </Box>
+                            </Text>
                         </Box>
                         <Box>
                             <Image
@@ -243,47 +266,59 @@ const App = () => {
 
                 </Flex>
 
-                <Box pt="5" color="white" maxW="1140px" mx="auto">
+                <Box pt="5" px="10" color="white" maxW="1140px" mx="auto">
                     <Heading as="h2" py="10">Projects</Heading>
-                    <Flex py="50">
-                        <Image src={lispExtensionScreenshot} w="45%" objectFit="cover" align="0 100%"/>
-                        <Spacer/>
-                        <Box w="45%">
-                            <Heading as="h3">ELPS VSCode Extension</Heading>
-                            <br/>
-                            <Text>
-                                I was an early adopter of a new programming language called ELPS
-                                <br/><br/>
-                                To help myself and my team write code in this language I created an extension to
-                                syntax
-                                highlight our code.
+                    <ProjectSection
+                        heading="ELPS VSCode Extension"
+                        imageSrc={lispExtensionScreenshot}
+                        reverseOrder={false}
+                    >
+                        I was an early adopter of a new programming language called ELPS
+                        <br/><br/>
+                        To help myself and my team write code in this language I created an extension to
+                        syntax
+                        highlight our code.
 
-                                <br/><br/>
-                                <LightLink>Read more about this project → </LightLink>
-                            </Text>
-                        </Box>
-                    </Flex>
+                        <br/><br/>
+                        <LightLink>Read more about this project → </LightLink>
+                    </ProjectSection>
 
-                    <Flex pt="100">
-                        <Box w="45%">
-                            <Heading as="h3">Pedestrian Tracker</Heading>
-                            <br/>
+                    <ProjectSection
+                        heading="Pedestrian Tracker"
+                        imageSrc={pedestrianTracker}
+                        reverseOrder={true}>
+                        For my third-year project at Cambridge, I created a pedestrian detector and tracker for
+                        CCTV footage.
+                        <br/><br/>
+                        My aim was to use a mixture of advanced image processing algorithms and
+                        classical machine learning techniques to build a super-efficient tracker with high
+                        accuracy.
+                        <br/><br/>
+                        I wrote this application in C++, using the
+                        <LightLink href="https://opencv.org/" target="_blank">OpenCV</LightLink>
+                        library as well as QT QML to
+                        create a native GUI.
+                    </ProjectSection>
 
-                            <Text>
-                                For my third-year project at Cambridge, I created a pedestrian detector and tracker for
-                                CCTV footage.
-                                <br/><br/>
-                                My aim was to use a mixture of advanced image processing algorithms and
-                                classical machine learning techniques to build a super-efficient tracker with high
-                                accuracy.
-                                <br/><br/>
-                                I wrote this application in C++, using the OpenCV library as well as QT QML to
-                                create a native GUI.
-                            </Text>
-                        </Box>
-                        <Spacer/>
-                        <Image src={pedestrianTracker} w="45%" objectFit="cover" align="75% 0"/>
-                    </Flex>
+                    <ProjectSection
+                        heading="Retail Startup Automator"
+                        imageSrc={SiteSkeleton}
+                        reverseOrder={false}
+                    >
+                        My second-year group project at university was a piece of software that automated creation of
+                        retail websites.
+                        <br/><br/>
+                        This project consisted of a <b>Crawler and Scraper</b> for popular retail websites
+                        such as eBay and Amazon, and a <b>NLP/Machine Learning</b> component that determined which parts
+                        of
+                        the data are actual relevant to the product. The final component was a <b>CMS/Website
+                        Generation </b>
+                        component that made complete ready to use websites, with pages for each product.
+                        <br/><br/>
+                        All that's needed as input is a single keyword to automatically create a full retail website! 🚀
+
+                    </ProjectSection>
+
                 </Box>
 
                 <Box pt={20} pb={5} textAlign="center">
@@ -295,7 +330,6 @@ const App = () => {
                                 fontSize="12"
                                 href="https://github.com/amirha97/amirha.com-2021"
                                 target="_blank"
-                                rel="noopener noreferrer"
                             >
                                 View source of this site on Github
                             </LightLink>
