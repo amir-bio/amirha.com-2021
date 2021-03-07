@@ -33,10 +33,6 @@ const colors = {
             light: "#3FDFE9",
             dark: "#102A4C",
         },
-
-        900: "#1a365d",
-        800: "#153e75",
-        700: "#2a69ac",
     },
 }
 // Version 2: Using functions
@@ -46,10 +42,7 @@ const theme = extendTheme({
         global: (props) => ({
             body: {
                 fontFamily: "body", // TODO: make font Robot
-                color: mode("gray.800", "whiteAlpha.900")(props),
-                // bg: mode("white", "gray.800")(props), //
                 bg: mode("brand.primary", "gray.800")(props),
-                lineHeight: "base",
             },
         }),
     },
@@ -134,12 +127,13 @@ const App = () => {
         <ChakraProvider theme={theme}>
             <Box>
                 <Box bg="brand.primary" color="white">
-                    {/* display={{lg: "flex"}} Changes the Display to a flex at and after a large breakpoint - causes children to stack vertically at sizes below it*/}
+                    {/* display={{lg: "flex"}} Changes the Display to a flex at and after a large breakpoint
+                    - causes children to stack vertically at sizes below it*/}
                     <Box display={{lg: "flex"}} maxW="1140px" mx="auto" pt={50}>
                         <Box
-                            py={{sm: 5, lg: 100}}
-                            pr={{sm: 5, lg: 100}}
-                            textAlign={{sm: "center", lg: "left"}}
+                            py={{base: 5, lg: 100}}
+                            pr={{base: 5, lg: 100}}
+                            textAlign={{base: "center", lg: "left"}}
                         >
                             <Heading as="h1">Hey 👋, I’m Amirhossein Andohkosh</Heading>
                             <Box pt="30" fontSize="18">Senior Software Engineer at
@@ -151,8 +145,8 @@ const App = () => {
                         </Box>
                         <Box>
                             <Image
-                                mx={{sm: "auto", lg: 0}}
-                                mb={{sm: 10, lg: 0}}
+                                mx={{base: "auto", lg: 0}}
+                                mb={{base: 10, lg: 0}}
                                 borderRadius="full"
                                 objectFit="cover"
                                 align="75% 20%"
