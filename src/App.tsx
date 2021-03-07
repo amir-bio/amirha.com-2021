@@ -24,6 +24,10 @@ import {
     Tag,
     Text
 } from "@chakra-ui/react"
+import ReactGA from 'react-ga';
+
+ReactGA.initialize("UA-41904377-2")
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const colors = {
     brand: {
@@ -41,7 +45,7 @@ const theme = extendTheme({
     styles: {
         global: (props) => ({
             body: {
-                fontFamily: "body", // TODO: make font Robot
+                fontFamily: "body",
                 bg: mode("brand.primary", "gray.800")(props),
             },
         }),

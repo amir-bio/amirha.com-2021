@@ -16,6 +16,7 @@ Here's a list of new features in this version compared to the last:
 - Deployed via Github Pages (Compared to Gitlab pages and Gitlab CI last time)
 - Use Chakra UI component library
 - (Some) Animation
+- Setup (Google) Analytics for gathering data to improve site
 - [ ] Dark/Light colour themes
 - [ ] Cypress Visual testing
 

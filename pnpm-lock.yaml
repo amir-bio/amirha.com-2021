@@ -7,6 +7,7 @@ dependencies:
   gh-pages: 3.1.0
   react: 17.0.1
   react-dom: 17.0.1_react@17.0.1
+  react-ga: 3.3.0_react@17.0.1
   react-icons: 4.2.0_react@17.0.1
 devDependencies:
   '@snowpack/plugin-dotenv': 2.0.5
@@ -3531,6 +3532,15 @@ packages:
       react: ^16.8.0 || ^17.0.0
     resolution:
       integrity: sha512-XLxj6uTXgz0US8TmqNU2jMfnXwZG0mH2r/afQqvPEaX6nyEll5LHVcEXk2XDUQ34RVeLPkO/xK5x6c/qiuSq/A==
+  /react-ga/3.3.0_react@17.0.1:
+    dependencies:
+      react: 17.0.1
+    dev: false
+    peerDependencies:
+      prop-types: ^15.6.0
+      react: ^15.6.2 || ^16.0 || ^17
+    resolution:
+      integrity: sha512-o8RScHj6Lb8cwy3GMrVH6NJvL+y0zpJvKtc0+wmH7Bt23rszJmnqEQxRbyrqUzk9DTJIHoP42bfO5rswC9SWBQ==
   /react-icons/4.2.0_react@17.0.1:
     dependencies:
       react: 17.0.1
@@ -4224,6 +4234,7 @@ specifiers:
   prettier: ^2.0.5
   react: ^17.0.0
   react-dom: ^17.0.0
+  react-ga: ^3.3.0
   react-icons: ^4.2.0
   snowpack: ^3.0.1
   typescript: ^4.0.0
