@@ -50,11 +50,13 @@ const theme = extendTheme({
 
 const TechCard = (props: BoxProps) => (
     <Box
+
+        w={{base: 0.7, md: 0.6, lg: 1 / 3}}
+        mt={{base: 10, lg: -150}}
+        mx={{base: "auto", lg: 3}}
         sx={{
             bg: "brand.secondary",
-            mt: -150,
             p: 5,
-            w: 1 / 3,
             borderRadius: "lg",
             color: "white",
             transition: "all .4s ease-in-out",
@@ -66,6 +68,7 @@ const TechCard = (props: BoxProps) => (
             }
         }}
         {...props}
+
     >
         {props.children}
     </Box>
@@ -162,7 +165,7 @@ const App = () => {
 
                 </Box>
 
-                <Box bg="white" my="10" pt="10" pb="150" w="100%">
+                <Box bg="white" my="10" pt="10" pb="150" px="10" w="100%">
                     <Box maxW="1140px" mx="auto">
                         <Heading as="h2">About</Heading>
                         <Text py="10">
@@ -185,7 +188,7 @@ const App = () => {
                     </Box>
                 </Box>
 
-                <Flex maxW="1140px" mx="auto">
+                <Flex direction={{base: "column", lg: "row"}} maxW="1140px" mx="auto">
                     <TechCard>
                         <Flex pb={20} justify="space-between">
                             <Heading as="h3" size="lg">Frontend</Heading>
@@ -203,7 +206,7 @@ const App = () => {
                         </Box>
                     </TechCard>
 
-                    <TechCard mx={10}>
+                    <TechCard>
                         <Flex pb={20} justify="space-between">
                             <Heading as="h3" size="lg">Backend</Heading>
                             <Image src={CustomGearIcon} width="70px"/>
@@ -289,7 +292,7 @@ const App = () => {
                             <SocialIcons pb={5}/>
 
                             <LightLink
-                                fontSize="14"
+                                fontSize="12"
                                 href="https://github.com/amirha97/amirha.com-2021"
                                 target="_blank"
                                 rel="noopener noreferrer"
