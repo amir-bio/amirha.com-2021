@@ -1,10 +1,12 @@
 dependencies:
   '@chakra-ui/react': 1.3.4_019b360c51cc949e559560426fc1bfeb
+  '@chakra-ui/theme-tools': 1.1.0_react@17.0.1
   '@emotion/react': 11.1.5_@types+react@17.0.2+react@17.0.1
   '@emotion/styled': 11.1.5_a444bc1706cb5f754e69bc6eb4e89491
   framer-motion: 3.10.0_react-dom@17.0.1+react@17.0.1
   react: 17.0.1
   react-dom: 17.0.1_react@17.0.1
+  react-icons: 4.2.0_react@17.0.1
 devDependencies:
   '@snowpack/plugin-dotenv': 2.0.5
   '@snowpack/plugin-react-refresh': 2.4.0_react-dom@17.0.1+react@17.0.1
@@ -848,6 +850,17 @@ packages:
   /@chakra-ui/theme-tools/1.1.0_55361d9d08a5ec2ad2601dbea36f5bb9:
     dependencies:
       '@chakra-ui/system': 1.4.0_e3977f9adc8b7f0abdc862cdd489defa
+      '@chakra-ui/utils': 1.3.0_react@17.0.1
+      '@types/tinycolor2': 1.4.2
+      tinycolor2: 1.4.2
+    dev: false
+    peerDependencies:
+      '@chakra-ui/system': '>=1.0.0'
+      react: '*'
+    resolution:
+      integrity: sha512-o1rJBJj3vbhq4C02Ld9Ay1xXKrfphQAqDacowKQlRu8G5DL+EvH/v0RGLkdJQd1ORoUsUZrZBvOcXO9dQt9DeQ==
+  /@chakra-ui/theme-tools/1.1.0_react@17.0.1:
+    dependencies:
       '@chakra-ui/utils': 1.3.0_react@17.0.1
       '@types/tinycolor2': 1.4.2
       tinycolor2: 1.4.2
@@ -3374,6 +3387,14 @@ packages:
       react: ^16.8.0 || ^17.0.0
     resolution:
       integrity: sha512-XLxj6uTXgz0US8TmqNU2jMfnXwZG0mH2r/afQqvPEaX6nyEll5LHVcEXk2XDUQ34RVeLPkO/xK5x6c/qiuSq/A==
+  /react-icons/4.2.0_react@17.0.1:
+    dependencies:
+      react: 17.0.1
+    dev: false
+    peerDependencies:
+      react: '*'
+    resolution:
+      integrity: sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ==
   /react-is/16.13.1:
     dev: false
     resolution:
@@ -3999,6 +4020,7 @@ packages:
       integrity: sha512-faQrqNMzcPCHGVC2aaOINk13K+aaBDUPjGWl0teOXywElLjyVAB6Oe2jj62jHYtwsU49jXhScYbvPENK+6zAvQ==
 specifiers:
   '@chakra-ui/react': ^1.3.4
+  '@chakra-ui/theme-tools': ^1.1.0
   '@emotion/react': ^11.1.5
   '@emotion/styled': ^11.1.5
   '@snowpack/plugin-dotenv': ^2.0.5
@@ -4017,5 +4039,6 @@ specifiers:
   prettier: ^2.0.5
   react: ^17.0.0
   react-dom: ^17.0.0
+  react-icons: ^4.2.0
   snowpack: ^3.0.1
   typescript: ^4.0.0
