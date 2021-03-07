@@ -1,5 +1,9 @@
 {
   "inputs": {
+    "index.html.inline.0.css": {
+      "bytes": 2354,
+      "imports": []
+    },
     "_snowpack/env.js": {
       "bytes": 97,
       "imports": []
@@ -125,7 +129,7 @@
       ]
     },
     "dist/App.js": {
-      "bytes": 12029,
+      "bytes": 12183,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -200,70 +204,80 @@
     }
   },
   "outputs": {
+    "../~~bundle~~/index.html.inline.0.css": {
+      "imports": [],
+      "entryPoint": "index.html.inline.0.css",
+      "inputs": {
+        "index.html.inline.0.css": {
+          "bytesInOutput": 1207
+        }
+      },
+      "bytes": 1208
+    },
     "../~~bundle~~/dist/index.js": {
       "imports": [],
       "exports": [],
       "entryPoint": "dist/index.js",
       "inputs": {
         "_snowpack/env.js": {
-          "bytesInOutput": 186
+          "bytesInOutput": 100
         },
         "_snowpack/pkg/common/index-b077351c.js": {
-          "bytesInOutput": 11710
+          "bytesInOutput": 7323
         },
         "_snowpack/pkg/react.js": {
           "bytesInOutput": 0
         },
         "_snowpack/pkg/react-dom.js": {
-          "bytesInOutput": 197993
+          "bytesInOutput": 124096
         },
         "dist/media/me.png.proxy.js": {
-          "bytesInOutput": 49
+          "bytesInOutput": 28
         },
         "dist/media/lispExtensionScreenshot.png.proxy.js": {
-          "bytesInOutput": 91
+          "bytesInOutput": 49
         },
         "dist/media/pedestrianTracker.png.proxy.js": {
-          "bytesInOutput": 79
+          "bytesInOutput": 43
         },
         "dist/media/CustomGearIcon.svg.proxy.js": {
-          "bytesInOutput": 73
+          "bytesInOutput": 40
         },
         "dist/media/CustomPuzzleIcon.svg.proxy.js": {
-          "bytesInOutput": 77
+          "bytesInOutput": 42
         },
         "dist/media/siteSkeleton.png.proxy.js": {
-          "bytesInOutput": 69
+          "bytesInOutput": 38
         },
         "_snowpack/pkg/common/component-ad77ec72.js": {
-          "bytesInOutput": 288
+          "bytesInOutput": 142
         },
         "_snowpack/pkg/@chakra-ui/theme-tools.js": {
           "bytesInOutput": 0
         },
         "_snowpack/pkg/common/iconBase-13a77ad2.js": {
-          "bytesInOutput": 2407
+          "bytesInOutput": 1417
         },
         "_snowpack/pkg/react-icons/ri.js": {
-          "bytesInOutput": 1708
+          "bytesInOutput": 1548
         },
         "_snowpack/pkg/react-icons/bs.js": {
-          "bytesInOutput": 716
+          "bytesInOutput": 668
         },
         "_snowpack/pkg/@chakra-ui/react.js": {
-          "bytesInOutput": 239437
+          "bytesInOutput": 131360
         },
         "_snowpack/pkg/react-ga.js": {
-          "bytesInOutput": 29883
+          "bytesInOutput": 15594
         },
         "dist/App.js": {
-          "bytesInOutput": 11089
+          "bytesInOutput": 7154
         },
         "dist/index.js": {
-          "bytesInOutput": 236
+          "bytesInOutput": 122
         }
       },
-      "bytes": 496876
+      "bytes": 290155
     }
   }
 }
