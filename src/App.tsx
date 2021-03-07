@@ -3,6 +3,9 @@ import me from './media/me.png'
 import lispExtensionScreenshot from './media/lisp_extension_screenshot.png'
 import pedestrianTracker from './media/pedestrian_tracker.png'
 import './App.css';
+import { mode } from "@chakra-ui/theme-tools"
+import { RiGithubFill, RiGitlabFill, RiLinkedinFill } from 'react-icons/ri'
+import { BsDisplay } from 'react-icons/bs'
 import {
     Box,
     Center,
@@ -12,20 +15,18 @@ import {
     Heading,
     Image,
     Link,
+    LinkProps,
     Spacer,
     Tag,
     Text
 } from "@chakra-ui/react"
-import { mode } from "@chakra-ui/theme-tools"
-import { RiGithubFill, RiGitlabFill, RiLinkedinFill } from 'react-icons/ri'
-import { BsDisplay } from 'react-icons/bs'
 
 const colors = {
     brand: {
         primary: "#102A4C",
         secondary: "#7755CC",
         action: {
-            light: "#7755CC",
+            light: "#3FDFE9",
             dark: "#102A4C",
         },
 
@@ -51,16 +52,37 @@ const theme = extendTheme({
 })
 
 const TechCard = Box // TODO
-const LightLink = (props: any) => (<Link props color="brand.action.light"> {props.children}</Link>)
+const LightLink = (props: LinkProps) => (
+    <Link
+        sx={{
+            color: "brand.action.light",
+            textDecoration: "underline",
+        }}
+        {...props}
+    >
+        {props.children}
+    </Link>
+)
+
+const DarkLink = (props: LinkProps) => (
+    <Link
+        sx={{
+            color: "brand.action.dark",
+            textDecoration: "underline",
+        }}
+        {...props}
+    >
+        {props.children}
+    </Link>
+)
+
+
 const App = () => {
     return (
         <ChakraProvider theme={theme}>
-            <Box
-                //
-                // mx="auto"
-                // bg="brand.primary"
-            >
+            <Box>
                 <Box bg="brand.primary" color="white">
+                    {/* display={{lg: "flex"}} Changes the Display to a flex at and after a large breakpoint - causes children to stack vertically at sizes below it*/}
                     <Box display={{lg: "flex"}} maxW="1140px" mx="auto" pt={50}>
                         <Box
                             py={{sm: 5, lg: 100}}
@@ -128,7 +150,7 @@ const App = () => {
                             Netcraft before that.
                             <br/>
                             <br/>
-                            My story →
+                            <DarkLink>My story → </DarkLink>
                         </Text>
                     </Box>
                 </Box>
