@@ -1,10 +1,10 @@
 import React from 'react';
-import me from './media/me.png'
-import lispExtensionScreenshot from './media/lispExtensionScreenshot.png'
-import pedestrianTracker from './media/pedestrianTracker.png'
+import me from './media/me.webp'
+import lispExtensionScreenshot from './media/lispExtensionScreenshot.webp'
+import pedestrianTracker from './media/pedestrianTracker.webp'
 import CustomGearIcon from './media/CustomGearIcon.svg'
 import CustomPuzzleIcon from './media/CustomPuzzleIcon.svg'
-import SiteSkeleton from './media/siteSkeleton.png'
+import SiteSkeleton from './media/siteSkeleton.webp'
 import { mode } from "@chakra-ui/theme-tools"
 import { RiGithubFill, RiGitlabFill, RiLinkedinFill } from 'react-icons/ri'
 import { BsDisplay } from 'react-icons/bs'

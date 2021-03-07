@@ -42,3 +42,5 @@ Optimisations performed:
 - Minify JS
 - Add CSS/HTML only loading spinner to root element in index.html - this reduces time to first paint significantly
 - Remove inactive links
+- Use webp image format - images are 5x to 30x smaller! (The large image must have had no compression applied until now)
+  To convert images to this format: `cwebp -q 70 <image>.png -o <image>.webp`
