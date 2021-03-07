@@ -29,3 +29,16 @@ Ensure you've got `pnpm` installed globally: `npm i -g pnpm`
 - To build a production bundle: `pnpm build`. (This uses `esbuild` via `snowpack`)
 - To deploy a new release: `pnpm deploy`. This assumes appropriate github token is available - it will run the build
   step and push the generated dist directory to a branch called `gh-pages` which is configured to publish to the site.
+
+### Performance
+
+Chrome Lighthouse report results after some optimisations:
+![chromeLighthouseReport.png](chromeLighthouseReport.png)
+
+Optimisations performed:
+
+- Alt tag for all images
+- Appropriate text size at all locations
+- Minify JS
+- Add CSS/HTML only loading spinner to root element in index.html - this reduces time to first paint significantly
+- Remove inactive links
