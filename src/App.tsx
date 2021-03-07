@@ -147,6 +147,12 @@ const ProjectSection = ({imageSrc, heading, reverseOrder, children}: ProjectSect
     </Flex>
 )
 
+const Tags = ({items}: { items: String[] }) => (
+    <>
+        {items.map(tag => <Tag mx={1} my={2} borderRadius="full" size="lg">{tag}</Tag>)}
+    </>
+)
+
 const App = () => {
     return (
         <ChakraProvider theme={theme}>
@@ -201,11 +207,12 @@ const App = () => {
                             professional analysts!
                             <br/>
                             <br/>
-                            Prior to Upside I worked at Acre as a Senior Backend Engineer and as a computer scientist at
+                            Prior to Upside I worked at Acre as a Senior Backend Engineer and as a Computer Scientist at
                             Netcraft before that.
                             <br/>
                             <br/>
-                            <DarkLink>My story → </DarkLink>
+                            {/* TODO: Enable this section after writing new page */}
+                            {/*<DarkLink>My story → </DarkLink>*/}
                         </Text>
                     </Box>
                 </Box>
@@ -217,14 +224,16 @@ const App = () => {
                             <BsDisplay size={50}/>
                         </Flex>
                         <Box>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">React</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">TypeScript</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">JSS</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Webpack</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Cypress</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">GraphQL</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Storybook</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">jQuery</Tag>
+                            <Tags items={[
+                                "React",
+                                "TypeScript",
+                                "JSS",
+                                "Webpack",
+                                "Cypress",
+                                "GraphQL",
+                                "Storybook",
+                                "jQuery",
+                            ]}/>
                         </Box>
                     </TechCard>
 
@@ -234,16 +243,19 @@ const App = () => {
                             <Image src={CustomGearIcon} width="70px"/>
                         </Flex>
                         <Box>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Go</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Python</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">C++</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">NodeJS</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">ELPS</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">gRPC</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">PHP</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Perl</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">PostgreSQL</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Django</Tag>
+                            <Tags items={[
+                                "Go",
+                                "Python",
+                                "C++",
+                                "NodeJS",
+                                "ELPS",
+                                "PHP",
+                                "Perl",
+                                "REST",
+                                "gRPC",
+                                "PostgreSQL",
+                                "Django",
+                            ]}/>
                         </Box>
                     </TechCard>
 
@@ -253,13 +265,15 @@ const App = () => {
                             <Image src={CustomPuzzleIcon} width="70px"/>
                         </Flex>
                         <Box>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Terraform</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">AWS</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">GCP</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Kubernetes</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Docker</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">Helm</Tag>
-                            <Tag mx={1} my={2} borderRadius="full" size="lg">CI/CD</Tag>
+                            <Tags items={[
+                                "Terraform",
+                                "AWS",
+                                "GCP",
+                                "Kubernetes",
+                                "Docker",
+                                "Helm",
+                                "CI/CD",
+                            ]}/>
                         </Box>
                     </TechCard>
 
@@ -329,8 +343,7 @@ const App = () => {
                             Generation </b>
                             component that made complete ready to use websites, with pages for each product.
                             <br/><br/>
-                            All that's needed as input is a single keyword to automatically create a full retail
-                            website! 🚀
+                            All that's needed to automatically create a large retail website is a single keyword! 🚀
 
                         </ProjectSection>
 
