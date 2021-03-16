@@ -19,7 +19,6 @@ Here's a list of new features in this version compared to the last:
 - Setup (Google) Analytics for gathering data to improve site
 - Visual testing with [Cypress](https://www.cypress.io/) and [Percy](https://percy.io)
   Runs automatic every day via CI (Github workflow)
-
 - [ ] Dark/Light colour themes
 
 ### 🔨 Development
@@ -32,7 +31,7 @@ Ensure you've got `pnpm` installed globally: `npm i -g pnpm`
 - To deploy a new release: `pnpm deploy`. This assumes appropriate github token is available - it will run the build
   step and push the generated dist directory to a branch called `gh-pages` which is configured to publish to the site.
 
-#### End to End Visual testing
+#### 🧪 End-to-End Visual Testing
 
 This project is using Cypress and Percy for end-to-end visual testing. Both are overkill for a project this simple and
 there are many easier ways of achieving the same thing however some features they provide will be more time-consuming to
@@ -56,7 +55,7 @@ dashboard.
 The CI/Github Workflow are configured to have access to the percy token via action secrets. The CI is configured to run
 against the live website. It's setup on a daily cron job and can be also be manually triggered via workflows.
 
-### Performance
+### ⚡ Performance
 
 Chrome Lighthouse report results after some optimisations:
 ![chromeLighthouseReport.png](chromeLighthouseReport.png)
