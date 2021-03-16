@@ -15,12 +15,32 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '15.1.0'
+      - name: Cache .pnpm-store
+        uses: actions/cache@v1
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-node15-${{ hashFiles('**/pnpm-lock.yaml') }}
+
       - run: npm i -g pnpm
       - name: Install deps
         run: pnpm install
       - name: Percy Test
         uses: percy/exec-action@v0.3.1
         with:
-          command: cypress run --config baseUrl=https://amirha.com --spec "cypress/integration/landingpage"
+          command: cypress run --config baseUrl=https://amirha.com --spec "cypress/integration/landingpage/**"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
+      - name: Upload cypress screenshots in case of failure
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots-(${{ github.sha }})
+          path: cypress/screenshots
+
+      - name: Upload cypress videos
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-videos-(${{ github.sha }})
+          path: cypress/videos
