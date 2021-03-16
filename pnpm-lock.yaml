@@ -24,6 +24,7 @@ devDependencies:
   '@web/test-runner': 0.12.15
   chai: 4.3.3
   cypress: 6.7.1
+  percy: 0.28.6
   prettier: 2.2.1
   snowpack: 3.0.13
   typescript: 4.2.3
@@ -4851,6 +4852,36 @@ packages:
     dev: true
     resolution:
       integrity: sha512-6SVEpnPteN9mR4fq/FCW7M0KDHWbNAyiiyj9igTpHSv2oBjgyNnDA2y0S+o8U+AN7QDRbh40JbAWi72M+cfOJg==
+  /percy/0.28.6:
+    dependencies:
+      '@oclif/command': 1.5.19
+      '@oclif/config': 1.17.0
+      '@oclif/plugin-help': 2.2.3
+      '@oclif/plugin-not-found': 1.2.4
+      axios: 0.21.1
+      body-parser: 1.19.0
+      colors: 1.4.0
+      cors: 2.8.5
+      cosmiconfig: 5.2.1
+      cross-spawn: 7.0.3
+      deepmerge: 4.2.2
+      express: 4.17.1
+      follow-redirects: 1.12.1
+      generic-pool: 3.7.2
+      globby: 10.0.2
+      image-size: 0.8.3
+      js-yaml: 3.14.1
+      percy-client: 3.8.0
+      puppeteer: 5.5.0
+      retry-axios: 1.0.2_axios@0.21.1
+      which: 2.0.2
+      winston: 3.3.3
+    dev: true
+    engines:
+      node: '>=10.0.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-02J9J4RQcznpkaUzFRcRMcWVs3akrV9Stop0rijqiRdN8XYAzE4EyDJxXuULz+iEnB6Wa2RctPaLkeIJcbbnJw==
   /performance-now/2.1.0:
     dev: true
     resolution:
@@ -6310,6 +6341,7 @@ specifiers:
   cypress: ^6.7.1
   framer-motion: ^3.10.0
   gh-pages: ^3.1.0
+  percy: ^0.28.6
   prettier: ^2.0.5
   react: ^17.0.0
   react-dom: ^17.0.0
