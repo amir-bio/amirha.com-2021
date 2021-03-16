@@ -20,7 +20,6 @@
     "build": "snowpack build",
     "deploy": "pnpm build && gh-pages  -d build",
     "test-e2e": "percy exec -- cypress open",
-    "test-e2e:headless": "cypress run --headless",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
