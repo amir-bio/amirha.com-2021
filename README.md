@@ -1,6 +1,9 @@
 # Amirha.com (2021)
 
-2021 Redesign of my personal website.
+[![Daily Visual Test](https://github.com/amirha97/amirha.com-2021/actions/workflows/daily-visual-test.yml/badge.svg)](https://github.com/amirha97/amirha.com-2021/actions)
+![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)
+
+2021 redesign of my [personal website, amirha.com](https://amirha.com).
 
 ## ✨ New Features
 
