@@ -38,8 +38,12 @@
       "bytes": 37,
       "imports": []
     },
-    "dist/media/lispExtensionScreenshot.webp.proxy.js": {
-      "bytes": 58,
+    "dist/media/lispExtensionScreenshotCropped.webp.proxy.js": {
+      "bytes": 65,
+      "imports": []
+    },
+    "dist/media/githubActionsStatVisualiser.webp.proxy.js": {
+      "bytes": 62,
       "imports": []
     },
     "dist/media/pedestrianTracker.webp.proxy.js": {
@@ -54,8 +58,8 @@
       "bytes": 50,
       "imports": []
     },
-    "dist/media/siteSkeleton.webp.proxy.js": {
-      "bytes": 47,
+    "dist/media/siteSkeleton.svg.proxy.js": {
+      "bytes": 46,
       "imports": []
     },
     "_snowpack/pkg/common/component-ad77ec72.js": {
@@ -129,7 +133,7 @@
       ]
     },
     "dist/App.js": {
-      "bytes": 12187,
+      "bytes": 13939,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -140,7 +144,11 @@
           "kind": "import-statement"
         },
         {
-          "path": "dist/media/lispExtensionScreenshot.webp.proxy.js",
+          "path": "dist/media/lispExtensionScreenshotCropped.webp.proxy.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "dist/media/githubActionsStatVisualiser.webp.proxy.js",
           "kind": "import-statement"
         },
         {
@@ -156,7 +164,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "dist/media/siteSkeleton.webp.proxy.js",
+          "path": "dist/media/siteSkeleton.svg.proxy.js",
           "kind": "import-statement"
         },
         {
@@ -234,8 +242,11 @@
         "dist/media/me.webp.proxy.js": {
           "bytesInOutput": 29
         },
-        "dist/media/lispExtensionScreenshot.webp.proxy.js": {
-          "bytesInOutput": 50
+        "dist/media/lispExtensionScreenshotCropped.webp.proxy.js": {
+          "bytesInOutput": 57
+        },
+        "dist/media/githubActionsStatVisualiser.webp.proxy.js": {
+          "bytesInOutput": 54
         },
         "dist/media/pedestrianTracker.webp.proxy.js": {
           "bytesInOutput": 44
@@ -246,8 +257,8 @@
         "dist/media/CustomPuzzleIcon.svg.proxy.js": {
           "bytesInOutput": 42
         },
-        "dist/media/siteSkeleton.webp.proxy.js": {
-          "bytesInOutput": 39
+        "dist/media/siteSkeleton.svg.proxy.js": {
+          "bytesInOutput": 38
         },
         "_snowpack/pkg/common/component-ad77ec72.js": {
           "bytesInOutput": 142
@@ -271,13 +282,13 @@
           "bytesInOutput": 15594
         },
         "dist/App.js": {
-          "bytesInOutput": 7154
+          "bytesInOutput": 8457
         },
         "dist/index.js": {
           "bytesInOutput": 122
         }
       },
-      "bytes": 290159
+      "bytes": 291522
     }
   }
 }
