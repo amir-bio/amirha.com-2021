@@ -1,10 +1,11 @@
 import React from 'react';
 import me from './media/me.webp'
-import lispExtensionScreenshot from './media/lispExtensionScreenshot.webp'
+import lispExtensionScreenshotCropped from './media/lispExtensionScreenshotCropped.webp'
+import githubActionsStatVisualiser from './media/githubActionsStatVisualiser.webp'
 import pedestrianTracker from './media/pedestrianTracker.webp'
 import CustomGearIcon from './media/CustomGearIcon.svg'
 import CustomPuzzleIcon from './media/CustomPuzzleIcon.svg'
-import SiteSkeleton from './media/siteSkeleton.webp'
+import SiteSkeleton from './media/siteSkeleton.svg'
 import { mode } from "@chakra-ui/theme-tools"
 import { RiGithubFill, RiGitlabFill, RiLinkedinFill } from 'react-icons/ri'
 import { BsDisplay } from 'react-icons/bs'
@@ -287,25 +288,58 @@ const App = () => {
                     <Box pt="5" color="white" maxW="1140px" mx="auto">
                         <Heading as="h2" py="10">Projects</Heading>
                         <ProjectSection
-                            heading="ELPS VSCode Extension"
-                            imageSrc={lispExtensionScreenshot}
-                            imageAlt="Screenshot of ELPS syntax highlighting in action"
+                            heading="Github Actions Stat Visualiser"
+                            imageSrc={githubActionsStatVisualiser}
+                            imageAlt="Screenshot of Github Actions Stat Visualiser in action"
                             reverseOrder={false}
                         >
-                            I was an early adopter of a new programming language called
+                            Nowadays many software companies use CI/CD as a critical part of their deelopment flow to
+                            test, build and deploy their products.
+                            <br/><br/>
+                            It's crucial for these pipelines to be fast enough to allow teams to test and release their
+                            product as quickly as needed. Github Actions is one of the most popular
+                            CI/CD pipeline system, however there are no tools to analyse the workflows to understand
+                            bottlenecks and aid with optimising and assessing changes made to the pipeline, until now...
+                            <br/><br/>
+                            I've created
+                            {'  '}
+                            <LightLink
+                                href="https://github.com/amirha97/github-actions-stats"
+                                target="_blank"
+                                noUnderline={true}
+                            >
+                                Github Actions Stat Visualiser
+                            </LightLink>
+                            {'    '} to address these gaps and have used it successfully in production for optimisation
+                            and monitoring purposes!
+                            <br/><br/>
+                        </ProjectSection>
+
+                        <ProjectSection
+                            heading="ELPS VSCode Extension"
+                            imageSrc={lispExtensionScreenshotCropped}
+                            imageAlt="Screenshot of ELPS syntax highlighter in action"
+                            reverseOrder={true}
+                        >
+                            I'm an early adopter of
                             {'  '}
                             <LightLink
                                 href="https://github.com/luthersystems/elps"
                                 target="_blank"
                                 noUnderline={true}
                             >
-                                ELPS.
+                                ELPS,
                             </LightLink>
-                            {'    '}
+                            {' '} a new programming language guaranteed to be deterministic, purpose built for
+                            writing blockchain smart contracts.
                             <br/><br/>
-                            To help myself and my team write code in this language I created an extension to
-                            syntax
-                            highlight our code.
+                            To help myself and my team write and read ELPS code with ease I created a
+                            <LightLink
+                                href="https://marketplace.visualstudio.com/items?itemName=AmirHA.elps"
+                                target="_blank"
+                                noUnderline={true}
+                            >{' '} VSCode extension{' '}</LightLink>
+                            to syntax highlight our code.
 
                             <br/><br/>
                             {/* TODO: Enable link after writing blog post*/}
@@ -316,7 +350,7 @@ const App = () => {
                             heading="Pedestrian Tracker"
                             imageSrc={pedestrianTracker}
                             imageAlt="Screenshot of Pedestrian detection generated frames"
-                            reverseOrder={true}>
+                            reverseOrder={false}>
                             For my third-year project at Cambridge, I created a pedestrian detector and tracker for
                             CCTV footage.
                             <br/><br/>
@@ -338,9 +372,9 @@ const App = () => {
                             heading="Retail Startup Automator"
                             imageSrc={SiteSkeleton}
                             imageAlt="Website skeleton image"
-                            reverseOrder={false}
+                            reverseOrder={true}
                         >
-                            My second-year group project at university was a piece of software that automated creation
+                            My second-year group project at Cambridge was a piece of software that automated creation
                             of
                             retail websites.
                             <br/><br/>
